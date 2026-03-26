@@ -351,6 +351,36 @@ trime-installer/
 └── rime/                ← RIME 方案及詞庫
 ```
 
+## 自訂修改記錄
+
+本安裝包使用的 TRIME APK 為[自訂 fork](https://github.com/eric09230/trime)（branch: `restore-inline-switches`），基於官方 v3.3.9 並修復以下問題：
+
+### APK 原始碼修改
+
+| # | 問題 | 修復方式 |
+|---|------|----------|
+| 1 | **開關列被收進三點選單** — v3.3.6 移除 inline SwitchesUi | fork 並 backport SwitchesUi 到 v3.3.9 架構，新增 4 檔（`ime/bar/ui/switches/`），修改 `AlwaysUi.kt`、`InputBarDelegate.kt` |
+| 2 | **SwitchesUi emoji 按鈕** | 在開關列加入 😀 按鈕，按下開啟 emoji 鍵盤 |
+| 3 | **emoji 按鈕開啟符號頁而非 emoji** | `Keyboard_bqrw`（select: bqfh1）改為 `Keyboard_bqrw1`（select: bqrw1） |
+| 4 | **emoji 按鈕無法 toggle 回主鍵盤** | 在 `KeyboardWindow.kt` 暴露 `activeKeyboardId`/`isActiveKeyboardLocked`，`InputBarDelegate.kt` 判斷若已在 emoji/符號區則切回主鍵盤 |
+| 5 | **簡繁切換無效** — OpenCC 字典未打包 | `OpenCCDataPlugin.kt` 的 `providers.exec {}` 加 `.result.get()` 強制執行 |
+| 6 | **CI 改為 release build** | `.github/workflows/commit-ci.yml` 改 `make release`，`app/build.gradle.kts` release signingConfig fallback 到 debug key |
+| 7 | **英文模式按 ✽ 不開英文標點頁** | `KeyboardWindow.switchKeyboard()` 判斷 target=="bqfh1" 且 isAsciiMode 時重導到 "bqfh2" |
+
+### YAML 修改（rime/洋蔥注音331k_M.trime.yaml）
+
+| # | 問題 | 修復方式 |
+|---|------|----------|
+| 1 | **數字鍵盤重複輸入** | `KP_0`~`KP_9` 改為 `num_0`~`num_9` + `functional: false` |
+| 2 | **剪貼簿/收藏無法叫出** | `command: liquid_keyboard` → `command: clipboard_window`（option: "0"=剪貼簿, "1"=收藏） |
+
+### 注意事項
+
+- `_H`（高版）和 `_L`（低版）透過 `__include: 洋蔥注音331k_M.trime.yaml:/` 繼承 M 版，不需另外修改
+- 簡繁切換修復後，需確保手機 user dir（`/storage/emulated/0/rime/opencc/`）沒有多餘的 OpenCC 標準檔案遮蔽 shared dir
+
+---
+
 ## 常見問題
 
 **Q: 執行 install.bat 時顯示「adb not found」**
