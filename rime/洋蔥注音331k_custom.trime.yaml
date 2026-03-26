@@ -1,0 +1,23 @@
+# 自訂版 - 繼承 M 版，只覆寫樣式
+# 原版 洋蔥注音331k_M.trime.yaml 不受影響
+__include: 洋蔥注音331k_M.trime.yaml:/
+
+__patch:
+  # === 在這裡覆寫你想改的樣式 ===
+
+  # 候選字區域
+  # style/candidate_text_size: 20
+  # style/candidate_view_height: 36
+
+  # 按鍵文字大小
+  # style/key_text_size: 18
+
+  # 鍵盤整體高度 (直向/橫向)
+  # style/keyboard_height: 240
+  # style/keyboard_height_land: 190
+
+  # 配色方案（可選：default, tongwenfeng, aqua, azure, luna, ink, starcraft, google 等）
+  # style/color_scheme: tongwenfeng
+
+  # 圓角
+  # style/round_corner: 8

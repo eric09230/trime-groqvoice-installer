@@ -1,0 +1,352 @@
+# Rime schema settings
+# encoding: utf-8
+# 《洋蔥手機注音 plus版 設定頁》
+schema:
+  schema_id: bpmfmobileplus
+  name: "《洋蔥手機注音plus》"
+  version: "202507"
+  author:
+    - 『洋蔥』 # 以佛振注音支持聲韻亂序方案改編
+  description: |
+    注音符號輸入，採用「大千式」鍵盤排列。
+
+  dependencies:
+    - sy_bpmf
+    - latinin1
+    - jpnin1
+    - hangeul
+    - mobile_bpmf
+
+switches:
+  - name: ascii_mode
+    reset: 0
+    states: [" 中 ", " 英 "]
+  - name: full_shape
+    reset: 0
+    states: [" 半 ", " 全 "]
+  - name: ascii_punct
+    reset: 0
+    states: [ " 。", " ．" ] #[ 。，, ．， ]
+  - name: simplification
+    reset: 0
+    states: [" 原 ", " 简 "]
+  - name: character_range_bhjm
+    # reset: 1
+    states: [" 完 ", " 精 "]
+  - name: emoji_segestion
+    reset: 1
+    states: [ " 無 ", " 圖 " ]
+  - name: back_mark
+    reset: 1
+    # states: [ " 無 ", " 註 " ]
+  - name: punct_mark
+    reset: 1
+    # states: [ " 無 ", " 註 " ]
+  - name: prediction
+    # reset: 1
+    states: [ " 無 ", " 預 " ]
+
+engine:
+  filters:
+    - simplifier@character_range_bhjm
+    - lua_filter@charset_filter2
+    - simplifier@emoji_switch
+    - simplifier
+    - simplifier@back_mark
+    - simplifier@back_mark_series
+    - simplifier@punct_mark
+    - uniquifier
+  processors:
+    - lua_processor@mobile_bpmf
+    - predictor
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+    # - fluency_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - affix_segmentor@emoji_sy
+    - affix_segmentor@european
+    - affix_segmentor@japan
+    - affix_segmentor@korea
+    - affix_segmentor@bpmf_m
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - predict_translator
+    - punct_translator
+    - table_translator@emoji_sy
+    - script_translator@european
+    - script_translator@japan
+    - script_translator@korea
+    - script_translator@bpmf_m
+    - script_translator
+    - lua_translator@email_url_translator
+
+menu:
+  alternative_select_keys: "ABCDEFGHIJK3467"
+  page_size: 6
+
+simplifier:
+  opencc_config: tw2s.json
+  tips: all
+
+character_range_bhjm:
+  opencc_config: bpm_moedict_big5e_hkscs_jis.json #s2tw.json #t2tw.json
+  option_name: character_range_bhjm
+  tags: [ abc ]
+
+charset_filter2:
+  tags: [ abc ]
+
+emoji_switch:
+  opencc_config: emoji_t_m.json
+  option_name: emoji_segestion
+  tags: [ abc ]
+#  tips: all
+
+back_mark_series:
+  opencc_config: back_mark_series_t.json
+  option_name: back_mark
+  show_in_comment: true
+  tags: [ emoji_sy ]
+  tips: all
+  comment_format:
+    - erase/^.*〕.+$/  #去除一個條目有多個轉換。
+    - erase/^.+〔.*$/  #去除一個條目有多個轉換。
+
+back_mark:
+  opencc_config: back_mark_t.json
+  option_name: back_mark
+  show_in_comment: true
+  tags: [ european, japan, korea ]
+  tips: char #all
+  # comment_format:
+  #   - erase/^.*〕.+$/  #去除一個條目有多個轉換。
+  #   - erase/^.+〔.*$/  #去除一個條目有多個轉換。
+
+punct_mark:
+  opencc_config: punct_mark_t.json
+  option_name: punct_mark
+  show_in_comment: true
+  tags: [ punct ]
+  tips: all
+  comment_format:
+    - erase/^.*〔.*〕.+$/
+    - erase/^.+〔.*〕$/
+
+speller:
+  alphabet: "1qaz2wsxedcrfv5tgbyhnujm8ik,9ol.0p;/- 3467"
+  initials: "1qaz2wsxedcrfv5tgbyhnujm8ik,9ol.0p;/-"
+  finals: " 6347"
+  delimiter: "+"
+  use_space: true
+  algebra:
+##### 非正確注音（補空碼或慣用發音）轉寫 #####
+    - xform/[)(]//
+##### 拼音轉注音 #####
+    - xform/iu/iU/ #iou
+    - xform/ui/uI/ #uei
+    - xform/ong/ung/
+    - xform/yi?/i/
+    - xform/wu?/u/
+    - xform/iu/v/
+    - xform/([jqx])u/$1v/
+    - xform/([iuv])n/$1en/
+    - xform/zhi?/Z/
+    - xform/chi?/C/
+    - xform/shi?/S/
+    - xform/([zcsr])i/$1/
+    - xform/ai/A/
+    - xform/ei/I/
+    - xform/ao/O/
+    - xform/ou/U/
+    - xform/ang/K/
+    - xform/eng/G/
+    - xform/an/M/
+    - xform/en/N/
+    - xform/er/R/
+    - xform/eh/E/
+    - xform/([iv])e/$1E/
+##############字母簡化############
+    - abbrev/^([bpmfdtnlgkhjqxZCSrzcsiuvaoeEAIOUMNKGR]).+$/$1/
+    - abbrev/^([bpmfdtnlgkhjqxZCSrzcsiuv])([iuvaoeEAIOUMNKG])\d$/$1$2/ #[R]
+    - abbrev/^([bpmfdtnlgkhjqxZCSrzcs])([iuv])([aoeEAIOUMNKG])\d$/$1$2$3/ #[R]
+#    - abbrev/^([bpmfdtnlgkhjqxZCSrzcsiuv]).+(\d)$/$1$2/ #使得ㄎˇㄈˇ（可否）可以打的出來 #新增iuv，使得ㄧˊㄉˊ（贏得）可以打出
+#    - abbrev/^([bpmfdtnlgkhjqxZCSrzcs]).+(\d)$/$1$2/ #同上，但少了ㄧㄨㄩ
+    - abbrev/^([bpmfdtnlgkhjqx]).+(\d)$/$1$2/ #同上，但再少了ㄓㄔㄕㄖㄗㄘㄙ
+##########注音聲韻母亂序##########
+#關#    - derive/^([bpmfdtnlgkhjqxZCSrzcs])([iuv])/$2$1/
+#關#    - derive/^([iuv])([aoeEAIOUMNKG])/$2$1/ #[R]
+#關#    - derive/^([bpmfdtnlgkhjqxZCSrzcs])([aoeEAIOUMNKG])/$2$1/ #[R]
+#關#    - derive/^([bpmfdtnlgkhjqxZCSrzcs])([iuv])([aoeEAIOUMNKG])/$3$2$1/ #[R]
+#關#    - derive/^([bpmfdtnlgkhjqxZCSrzcs])([iuv])([aoeEAIOUMNKG])/$3$1$2/ #[R]
+#關#    - derive/^([bpmfdtnlgkhjqxZCSrzcs])([iuv])([aoeEAIOUMNKG])/$2$3$1/ #[R]
+#關#    - derive/^([bpmfdtnlgkhjqxZCSrzcs])([iuv])([aoeEAIOUMNKG])/$1$3$2/ #[R]
+    - 'xlit|bpmfdtnlgkhjqxZCSrzcsiuvaoeEAIOUMNKGR12345|1qaz2wsxedcrfv5tgbyhnujm8ik,9ol.0p;/- 6347|'
+
+translator:
+  dictionary: bpmfmobile.extended
+  prism: bpmfmobileplus
+  # enable_charset_filter: false
+  enable_completion: false
+  enable_user_dict: true
+  preedit_format:
+    - "xlit|1qaz2wsxedcrfv5tgbyhnujm8ik,9ol.0p;/- 6347|ㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙㄧㄨㄩㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦˉˊˇˋ˙|"
+    - 'xform/\+/⁝/'
+
+european:
+  tag: european
+  dictionary: latinin1.extended
+  # enable_charset_filter: false
+  enable_completion: false
+  enable_user_dict: true
+  prefix: "4"
+  suffix: " "
+  tips: "《拉》"
+  disable_user_dict_for_patterns:
+    - ^[-a-z,./]{1}[;/]?$
+    - ^[a-z]+;;$
+  preedit_format:
+    - xform/^/《拉》/
+    - "xlit|abcdefghijklmnopqrstuvwxyz|ABCDEFGHIJKLMNOPQRSTUVWXYZ|"
+    - 'xform/\+/ /'
+
+korea:
+  tag: korea
+  dictionary: hangeul_hnc_m.extended
+  # enable_charset_filter: false
+  enable_completion: false
+  enable_user_dict: true
+  prefix: "7"
+  suffix: " "
+  tips: "《韓》"
+  disable_user_dict_for_patterns:
+    - ^[a-z]+[/]?[/abcdefghijklmnopqrstuwxyz]$
+  preedit_format:
+    - "xlit|abcdefghijklmnopqrstuvwxyz|ABCDEFGHIJKLMNOPQRSTUVWXYZ|"
+    - xform/QQ/‹ʜᴊ›/
+    - xform|\/\/|‹ʜᴊ›|
+    - xform/Q/‹ʜᴄᴊ›/
+    - xform|\/|‹ʜᴄᴊ›|
+    - xform/V/‹漢›/
+    - xform/;/‹漢›/
+    # - xform/;/ /
+    - xform/^/《韓》/
+    - 'xform/\+/ /'
+
+#韓文形碼專用#
+# korea:
+#   tag: korea
+#   dictionary: hangeul.extended
+#   enable_completion: false
+#   enable_sentence: false
+#   enable_user_dict: true
+#   prefix: "7"
+#   suffix: " "
+#   tips: "《韓》"
+#   disable_user_dict_for_patterns:
+#     - ^[a-z]{1,2}$
+#   preedit_format:
+#     - xform/^/《韓》/
+#     - "xlit|abcdefghijklmnopqrstuvwxyz|ABCDEFGHIJKLMNOPQRSTUVWXYZ|"
+#     - 'xform/\+/ /'
+
+japan:
+  tag: japan
+  dictionary: jpnin1.extended
+  # enable_charset_filter: false
+  enable_completion: false
+  enable_user_dict: true
+  prefix: "6"
+  suffix: " "
+  tips: "《日》"
+  disable_user_dict_for_patterns:
+    - ^-{1,2}$
+    # - ^[.]$
+    # - ^[aiueohn]$
+    # - ^[kstnhmrgzdbp][aiueo]$
+    # - ^[sc][h][i]$
+    # - ^[t][s][u]$
+    # - ^[f][u]$
+    # - ^[y][auo]$
+    # - ^[w][ao]$
+    # - ^[n]$
+    # - ^[kgsztnhbpmr][y][auo]$
+    # - ^[sc][h][auo]$
+    # - ^[j][auo]$
+  preedit_format:
+    - xform/^/《日》/
+    - "xlit|abcdefghijklmnopqrstuvwxyz|ABCDEFGHIJKLMNOPQRSTUVWXYZ|"
+    - 'xform/\+/ /'
+
+bpmf_m:
+  tag: bpmf_m
+  dictionary: mobile_bpmf
+  # enable_charset_filter: false
+  enable_completion: false
+  enable_user_dict: false
+  prefix: "'\""
+  suffix: "'\""
+  tips: "《注音文》"
+  preedit_format:
+    - "xlit|1qaz2wsxedcrfv5tgbyhnujm8ik,9ol.0p;/-6347 |ㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙㄧㄨㄩㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦˊˇˋ˙ˉ|"
+    - 'xform/\+//'
+    - xform/˙˙/ˉ/
+    - xform/'"//
+
+emoji_sy:
+  tag: emoji_sy
+  dictionary: sy_bpmf
+  # enable_charset_filter: false
+  # enable_encoder: false
+  # encode_commit_history: false
+  enable_sentence: false
+  enable_completion: false
+  # sentence_over_completion: false
+  enable_user_dict: true
+  prefix: "3"
+  suffix: " "
+  tips: "《符集》"
+  preedit_format:
+    __include: element_bpmf:/emoji_series
+
+punctuator:
+  import_preset: punct_bpmf
+
+key_binder:
+  import_preset: default
+  bindings:
+    __include: element_bpmf:/key_binder
+
+editor:
+  bindings:
+    # space: commit_composition
+    Return: confirm
+    Control+Return: commit_raw_input
+
+recognizer:
+  patterns:
+#    uppercase: "^[A-Z][-_+.'0-9A-Za-z]*$"
+    # email: "^[a-z][-_.0-9a-z]*@.*$"
+    # url: "^(https?:|ftp:|mailto:|file:).*$"
+    emoji_sy: "(?<![-,./;a-z125890])3[-/0-9a-z]* ?$"
+    european: "(?<![-,./;a-z125890])4[+a-z;,./-]* ?$"
+    japan: "(?<![-,./;a-z125890])6[+a-z;,./-]* ?$"
+    korea: "(?<![-,./;a-z125890])7[+a-z;,./]* ?$"
+    #韓文形碼專用# korea: "(?<![-,./;a-z125890])7[+a-z;/]* ?$"
+    bpmf_m: "^[-+/0-9a-z.,; ]+'\"$|^'\"[-+/0-9a-z.,; ]*$"
+    punct: "[(][)]$|[[][]]$|[{][}]$|[<][>]$|''$|\"\"$"
+    email_url_translator: "^[a-z][-_.0-9a-z]*@.*$|^(https?:|ftp:|mailto:|file:).*$"
+
+predictor:
+  db: predict_office.db  #predict.db  #文件名，predict db file in user directory/shared directory
+  max_candidates: 0  #5  #每次預測的最大候選項數量，0表示全部候選項
+  max_iterations: 0  #1  #最大預測次數，0表示不限制
