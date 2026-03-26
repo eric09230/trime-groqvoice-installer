@@ -311,7 +311,7 @@ GroqVoice 需要 Groq API Key 才能使用語音轉文字功能。
 | 丹青 | Mijiag | 一葉孤城 | 小辛 |
 | …及更多 | | | |
 
-每套方案定義完整配色：背景、邊框、候選文字、高亮、按鍵、空格/Enter/退格/功能鍵的獨立色彩。
+每套方案均定義完整配色：背景、邊框、候選文字、高亮，以及鍵盤按鍵的 4 色分區（一般鍵、聲調鍵、功能鍵/退格、Enter），確保所有配色方案都能正確顯示鍵盤顏色。
 
 ---
 
@@ -323,7 +323,7 @@ GroqVoice 需要 Groq API Key 才能使用語音轉文字功能。
 - **懸浮窗口**：固定位置、最大寬度 360、圓角 8、不可移動
 - **橫屏適配**：獨立的橫屏鍵盤高度與邊距設定
 - **Enter 鍵動態標籤**：根據 App 場景顯示「前往/完成/搜索/發送」等
-- **顏色後備機制**：30+ 項顏色繼承鏈，未指定時自動從父項繼承
+- **顏色後備機制**：60+ 項顏色繼承鏈（含自訂按鍵色標 fallback），未指定時自動從父項繼承
 
 ---
 
@@ -366,6 +366,8 @@ trime-installer/
 | 5 | **簡繁切換無效** — OpenCC 字典未打包 | `OpenCCDataPlugin.kt` 的 `providers.exec {}` 加 `.result.get()` 強制執行 |
 | 6 | **CI 改為 release build** | `.github/workflows/commit-ci.yml` 改 `make release`，`app/build.gradle.kts` release signingConfig fallback 到 debug key |
 | 7 | **英文模式按 ✽ 不開英文標點頁** | `KeyboardWindow.switchKeyboard()` 判斷 target=="bqfh1" 且 isAsciiMode 時重導到 "bqfh2" |
+| 8 | **bqfh 頁面間無法切回 bqfh1** — fix #7 的重導在 bqfh 內部導航也會觸發，配合同鍵盤 guard 導致無反應 | 重導加 `!currentId.startsWith("bqfh")` 條件，僅從外部進入時重導 |
+| 9 | **SwitchesUi 按鈕無觸覺回饋** | `InputBarDelegate.kt` 的 `setOnSwitchClick` 加入 `InputFeedbackManager.keyPressVibrate()`，遵循用戶振動設定 |
 
 ### YAML 修改（rime/洋蔥注音331k_M.trime.yaml）
 
@@ -374,6 +376,7 @@ trime-installer/
 | 1 | **數字鍵盤重複輸入** | `KP_0`~`KP_9` 改為 `num_0`~`num_9` + `functional: false` |
 | 2 | **剪貼簿/收藏無法叫出** | `command: liquid_keyboard` → `command: clipboard_window`（option: "0"=剪貼簿, "1"=收藏） |
 | 3 | **符號鍵盤(bqfh)導航列錯位** — `click: ''` 空佔位 key 在 v3.3.9 因缺少 width 導致寬度為 0，底部導航列（中文/英文/常用...）擠到錯誤位置 | 138 個空 key 加上 `width: 10`，涵蓋 bqfh1~14 中的 11 頁 |
+| 4 | **多數配色方案鍵盤顏色異常** — 鍵盤佈局引用自訂色標（`bkg`、`benter`、`bbs`、`bzyplus` 等 30+ 個），但僅「標準配色！」和「原標準配色！」有定義，其餘 36 個方案全部缺失，導致切換配色後鍵盤變成整片同色 | 1. 在 `fallback_colors` 新增 30+ 項自訂色標回退鏈作為安全網 2. 為全部 36 個配色方案逐一推導並補齊自訂按鍵色（4 色分區：一般鍵=背景色、聲調鍵=accent 淡化、功能鍵/退格=背景加深/減淡、Enter=accent 色） |
 
 ### 注意事項
 

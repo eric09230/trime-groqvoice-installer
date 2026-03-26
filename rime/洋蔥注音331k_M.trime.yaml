@@ -236,6 +236,39 @@ fallback_colors:
   liquid_keyboard_background: keyboard_back_color # liquidKeyboard的背景圖/色
   text_back_color: back_color #編碼區背景，即懸浮窗背景
   long_text_back_color: key_back_color #長文本按鍵的背景(剪貼板）
+  # 自訂按鍵配色回退（讓所有配色方案都能正常顯示鍵盤）
+  bkg: key_back_color #空格鍵背景 → 一般按鍵背景
+  tkg: key_text_color #空格鍵文字 → 一般按鍵文字
+  benter: hilited_key_back_color #回車鍵背景 → 高亮按鍵背景
+  tenter: hilited_key_text_color #回車鍵文字 → 高亮按鍵文字
+  bgn: off_key_back_color #功能鍵背景 → 關閉狀態按鍵背景
+  bgn2: off_key_back_color #功能鍵背景2
+  bgn3: off_key_back_color #功能鍵背景3
+  tgn: off_key_text_color #功能鍵文字 → 關閉狀態按鍵文字
+  bbs: off_key_back_color #退格鍵背景 → 關閉狀態按鍵背景
+  tbs: off_key_text_color #退格鍵文字
+  bmk: hilited_key_back_color #類別標註背景 → 高亮按鍵背景
+  tajs: key_symbol_color #按鍵上方符號深色
+  tajs2: key_symbol_color #按鍵上方符號淺色
+  bjt: off_key_back_color #箭頭背景 → 關閉狀態按鍵背景
+  bh1: key_back_color #第一行背景
+  th1: key_text_color #第一行文字
+  bh2: key_back_color #第二行背景
+  th2: key_text_color #第二行文字
+  bh3: key_back_color #第三行背景
+  th3: key_text_color #第三行文字
+  bh4: key_back_color #第四行背景
+  th4: key_text_color #第四行文字
+  bsz1: off_key_back_color #數字1~5鍵背景
+  bsz2: off_key_back_color #數字6~0鍵背景
+  bzymixin: key_back_color #注音mixin聲調鍵背景
+  bzymix: key_back_color #注音mix聲調鍵背景
+  bzyplus: key_back_color #注音plus聲調鍵背景
+  grey1: off_key_back_color #灰色
+  blue1: key_back_color #淺藍
+  blued: hilited_key_back_color #藍色
+  baoe: key_back_color #母音鍵背景
+  taoe: key_text_color #母音鍵文字
 
 #配色方案
 preset_color_schemes:
@@ -437,6 +470,38 @@ preset_color_schemes:
     hilited_back_color: 0xd4d4d4
     hilited_candidate_text_color: 0xffffff
     hilited_candidate_back_color: 0x0a3afa
+    bkg: 0xffeeeeec
+    tkg: 0xff000000
+    benter: 0xff0a3afa
+    tenter: 0xffffffff
+    bgn: 0xffc3c3c1
+    bgn2: 0xffb9b9b8
+    bgn3: 0xffc3c3c1
+    tgn: 0xff000000
+    bbs: 0xffa6a6a5
+    tbs: 0xff000000
+    bmk: 0xff0a3afa
+    tajs: 0xff253238
+    tajs2: 0xffd1d1cf
+    bjt: 0xffc3c3c1
+    bh1: 0xffeeeeec
+    th1: 0xff000000
+    bh2: 0xffeeeeec
+    th2: 0xff000000
+    bh3: 0xffeeeeec
+    th3: 0xff000000
+    bh4: 0xffeeeeec
+    th4: 0xff000000
+    bsz1: 0xffc3c3c1
+    bsz2: 0xffc3c3c1
+    bzyplus: 0xffcbd3ee
+    bzymix: 0xffcbd3ee
+    bzymixin: 0xffcbd3ee
+    grey1: 0xff8b969a
+    blue1: 0xffeeeeec
+    blued: 0xff0a3afa
+    baoe: 0xffeeeeec
+    taoe: 0xff000000
 
   azure:
     name: 青天／Azure
@@ -450,6 +515,38 @@ preset_color_schemes:
     hilited_candidate_text_color: 0xfffe7f
     hilited_candidate_back_color: 0x015ea9
     comment_text_color: 0x6496c6
+    bkg: 0xff014e8b
+    tkg: 0xffeef8ff
+    benter: 0xff015ea9
+    tenter: 0xffffffff
+    bgn: 0xff27689c
+    bgn2: 0xff2e6d9f
+    bgn3: 0xff27689c
+    tgn: 0xffffffff
+    bbs: 0xff407aa8
+    tbs: 0xffffffff
+    bmk: 0xff015ea9
+    tajs: 0xffcccccc
+    tajs2: 0xff1a5f96
+    bjt: 0xff27689c
+    bh1: 0xff014e8b
+    th1: 0xffeef8ff
+    bh2: 0xff014e8b
+    th2: 0xffeef8ff
+    bh3: 0xff014e8b
+    th3: 0xffeef8ff
+    bh4: 0xff014e8b
+    th4: 0xffeef8ff
+    bsz1: 0xff27689c
+    bsz2: 0xff27689c
+    bzyplus: 0xff015191
+    bzymix: 0xff015191
+    bzymixin: 0xff015191
+    grey1: 0xff6b767a
+    blue1: 0xff014e8b
+    blued: 0xff015ea9
+    baoe: 0xff014e8b
+    taoe: 0xffeef8ff
 
   luna:
     name: 明月／Luna
@@ -461,6 +558,38 @@ preset_color_schemes:
     hilited_back_color: 0xffff7f
     hilited_candidate_text_color: 0xffffff
     hilited_candidate_back_color: 0x000000
+    bkg: 0xffffffff
+    tkg: 0xff000000
+    benter: 0xff000000
+    tenter: 0xffffffff
+    bgn: 0xffd1d1d1
+    bgn2: 0xffc6c6c6
+    bgn3: 0xffd1d1d1
+    tgn: 0xff000000
+    bbs: 0xffb2b2b2
+    tbs: 0xff000000
+    bmk: 0xff000000
+    tajs: 0xff253238
+    tajs2: 0xffe0e0e0
+    bjt: 0xffd1d1d1
+    bh1: 0xffffffff
+    th1: 0xff000000
+    bh2: 0xffffffff
+    th2: 0xff000000
+    bh3: 0xffffffff
+    th3: 0xff000000
+    bh4: 0xffffffff
+    th4: 0xff000000
+    bsz1: 0xffd1d1d1
+    bsz2: 0xffd1d1d1
+    bzyplus: 0xffd8d8d8
+    bzymix: 0xffd8d8d8
+    bzymixin: 0xffd8d8d8
+    grey1: 0xff8b969a
+    blue1: 0xffffffff
+    blued: 0xff000000
+    baoe: 0xffffffff
+    taoe: 0xff000000
 
   ink:
     name: 墨池／Ink
@@ -473,6 +602,38 @@ preset_color_schemes:
     hilited_candidate_text_color: 0xffffff
     hilited_candidate_back_color: 0x000000
     keyboard_back_color: 0xdddddd
+    bkg: 0xffffffff
+    tkg: 0xff000000
+    benter: 0xff000000
+    tenter: 0xffffffff
+    bgn: 0xffd1d1d1
+    bgn2: 0xffc6c6c6
+    bgn3: 0xffd1d1d1
+    tgn: 0xff000000
+    bbs: 0xffb2b2b2
+    tbs: 0xff000000
+    bmk: 0xff000000
+    tajs: 0xff253238
+    tajs2: 0xffe0e0e0
+    bjt: 0xffd1d1d1
+    bh1: 0xffffffff
+    th1: 0xff000000
+    bh2: 0xffffffff
+    th2: 0xff000000
+    bh3: 0xffffffff
+    th3: 0xff000000
+    bh4: 0xffffffff
+    th4: 0xff000000
+    bsz1: 0xffd1d1d1
+    bsz2: 0xffd1d1d1
+    bzyplus: 0xffd8d8d8
+    bzymix: 0xffd8d8d8
+    bzymixin: 0xffd8d8d8
+    grey1: 0xff8b969a
+    blue1: 0xffffffff
+    blued: 0xff000000
+    baoe: 0xffffffff
+    taoe: 0xff000000
 
   lost_temple:
     name: 孤寺／Lost Temple
@@ -484,6 +645,38 @@ preset_color_schemes:
     hilited_back_color: 0x222222
     hilited_candidate_text_color: 0x000000
     hilited_candidate_back_color: 0xcae682
+    bkg: 0xff444444
+    tkg: 0xfff6f3e8
+    benter: 0xffcae682
+    tenter: 0xff000000
+    bgn: 0xff606060
+    bgn2: 0xff656565
+    bgn3: 0xff606060
+    tgn: 0xffffffff
+    bbs: 0xff727272
+    tbs: 0xffffffff
+    bmk: 0xffcae682
+    tajs: 0xffcccccc
+    tajs2: 0xff565656
+    bjt: 0xff606060
+    bh1: 0xff444444
+    th1: 0xfff6f3e8
+    bh2: 0xff444444
+    th2: 0xfff6f3e8
+    bh3: 0xff444444
+    th3: 0xfff6f3e8
+    bh4: 0xff444444
+    th4: 0xfff6f3e8
+    bsz1: 0xff606060
+    bsz2: 0xff606060
+    bzyplus: 0xff5e6450
+    bzymix: 0xff5e6450
+    bzymixin: 0xff5e6450
+    grey1: 0xff6b767a
+    blue1: 0xff444444
+    blued: 0xffcae682
+    baoe: 0xff444444
+    taoe: 0xfff6f3e8
 
   dark_temple:
     name: 暗堂／Dark Temple
@@ -497,6 +690,38 @@ preset_color_schemes:
     hilited_candidate_text_color: 0xdaf692
     hilited_candidate_back_color: 0x333333
     comment_text_color: 0xff6c60
+    bkg: 0xff222222
+    tkg: 0xffe6e3d8
+    benter: 0xff333333
+    tenter: 0xffffffff
+    bgn: 0xff434343
+    bgn2: 0xff494949
+    bgn3: 0xff434343
+    tgn: 0xffffffff
+    bbs: 0xff595959
+    tbs: 0xffffffff
+    bmk: 0xff333333
+    tajs: 0xffcccccc
+    tajs2: 0xff383838
+    bjt: 0xff434343
+    bh1: 0xff222222
+    th1: 0xffe6e3d8
+    bh2: 0xff222222
+    th2: 0xffe6e3d8
+    bh3: 0xff222222
+    th3: 0xffe6e3d8
+    bh4: 0xff222222
+    th4: 0xffe6e3d8
+    bsz1: 0xff434343
+    bsz2: 0xff434343
+    bzyplus: 0xff252525
+    bzymix: 0xff252525
+    bzymixin: 0xff252525
+    grey1: 0xff6b767a
+    blue1: 0xff222222
+    blued: 0xff333333
+    baoe: 0xff222222
+    taoe: 0xffe6e3d8
 
   starcraft:
     name: 星際我爭霸／StarCraft
@@ -509,6 +734,38 @@ preset_color_schemes:
     hilited_back_color: 0x000000
     hilited_candidate_text_color: 0xa8ff60
     hilited_candidate_back_color: 0x000000
+    bkg: 0xff000000
+    tkg: 0xff55bb30
+    benter: 0xff000000
+    tenter: 0xffffffff
+    bgn: 0xff262626
+    bgn2: 0xff2d2d2d
+    bgn3: 0xff262626
+    tgn: 0xffffffff
+    bbs: 0xff3f3f3f
+    tbs: 0xffffffff
+    bmk: 0xff000000
+    tajs: 0xffcccccc
+    tajs2: 0xff191919
+    bjt: 0xff262626
+    bh1: 0xff000000
+    th1: 0xff55bb30
+    bh2: 0xff000000
+    th2: 0xff55bb30
+    bh3: 0xff000000
+    th3: 0xff55bb30
+    bh4: 0xff000000
+    th4: 0xff55bb30
+    bsz1: 0xff262626
+    bsz2: 0xff262626
+    bzyplus: 0xff000000
+    bzymix: 0xff000000
+    bzymixin: 0xff000000
+    grey1: 0xff6b767a
+    blue1: 0xff000000
+    blued: 0xff000000
+    baoe: 0xff000000
+    taoe: 0xff55bb30
 
   google:
     name: 谷歌／Google
@@ -521,6 +778,38 @@ preset_color_schemes:
     hilited_back_color: 0xFFFFFF
     hilited_candidate_text_color: 0xFFFFFF
     hilited_candidate_back_color: 0x3975CE
+    bkg: 0xffffffff
+    tkg: 0xff000000
+    benter: 0xff3975ce
+    tenter: 0xffffffff
+    bgn: 0xffd1d1d1
+    bgn2: 0xffc6c6c6
+    bgn3: 0xffd1d1d1
+    tgn: 0xff000000
+    bbs: 0xffb2b2b2
+    tbs: 0xff000000
+    bmk: 0xff3975ce
+    tajs: 0xff253238
+    tajs2: 0xffe0e0e0
+    bjt: 0xffd1d1d1
+    bh1: 0xffffffff
+    th1: 0xff000000
+    bh2: 0xffffffff
+    th2: 0xff000000
+    bh3: 0xffffffff
+    th3: 0xff000000
+    bh4: 0xffffffff
+    th4: 0xff000000
+    bsz1: 0xffd1d1d1
+    bsz2: 0xffd1d1d1
+    bzyplus: 0xffe1eaf7
+    bzymix: 0xffe1eaf7
+    bzymixin: 0xffe1eaf7
+    grey1: 0xff8b969a
+    blue1: 0xffffffff
+    blued: 0xff3975ce
+    baoe: 0xffffffff
+    taoe: 0xff000000
 
   solarized_rock:
     name: 曬經石／Solarized Rock
@@ -532,6 +821,38 @@ preset_color_schemes:
     candidate_text_color: 0x839496
     hilited_candidate_text_color: 0xffffff
     hilited_candidate_back_color: 0xd33682
+    bkg: 0xff002b36
+    tkg: 0xff839496
+    benter: 0xffd33682
+    tenter: 0xffffffff
+    bgn: 0xff264a54
+    bgn2: 0xff2d515a
+    bgn3: 0xff264a54
+    tgn: 0xffffffff
+    bbs: 0xff3f6068
+    tbs: 0xffffffff
+    bmk: 0xffd33682
+    tajs: 0xffcccccc
+    tajs2: 0xff19404a
+    bjt: 0xff264a54
+    bh1: 0xff002b36
+    th1: 0xff839496
+    bh2: 0xff002b36
+    th2: 0xff839496
+    bh3: 0xff002b36
+    th3: 0xff839496
+    bh4: 0xff002b36
+    th4: 0xff839496
+    bsz1: 0xff264a54
+    bsz2: 0xff264a54
+    bzyplus: 0xff2a2d45
+    bzymix: 0xff2a2d45
+    bzymixin: 0xff2a2d45
+    grey1: 0xff6b767a
+    blue1: 0xff002b36
+    blued: 0xffd33682
+    baoe: 0xff002b36
+    taoe: 0xff839496
 
   tintin:
     name: "丁丁／ Tintin"
@@ -547,6 +868,38 @@ preset_color_schemes:
     hilited_candidate_text_color: 0xffffff
     hilited_comment_text_color: 0xffffff
     hilited_candidate_back_color: 0xf16421
+    bkg: 0xff0095d9
+    tkg: 0xffffffff
+    benter: 0xfff16421
+    tenter: 0xffffffff
+    bgn: 0xff26a4de
+    bgn2: 0xff2da8df
+    bgn3: 0xff26a4de
+    tgn: 0xffffffff
+    bbs: 0xff3fafe2
+    tbs: 0xffffffff
+    bmk: 0xfff16421
+    tajs: 0xffcccccc
+    tajs2: 0xff199fdc
+    bjt: 0xff26a4de
+    bh1: 0xff0095d9
+    th1: 0xffffffff
+    bh2: 0xff0095d9
+    th2: 0xffffffff
+    bh3: 0xff0095d9
+    th3: 0xffffffff
+    bh4: 0xff0095d9
+    th4: 0xffffffff
+    bsz1: 0xff26a4de
+    bsz2: 0xff26a4de
+    bzyplus: 0xff308bb4
+    bzymix: 0xff308bb4
+    bzymixin: 0xff308bb4
+    grey1: 0xff6b767a
+    blue1: 0xff0095d9
+    blued: 0xfff16421
+    baoe: 0xff0095d9
+    taoe: 0xffffffff
 
   dota_2:
     name: "DOTA 2"
@@ -562,6 +915,38 @@ preset_color_schemes:
     hilited_candidate_text_color: 0xffffff
     hilited_comment_text_color: 0xffffff
     hilited_candidate_back_color: 0xdd4118
+    bkg: 0xff100f12
+    tkg: 0xff8f755c
+    benter: 0xffdd4118
+    tenter: 0xffffffff
+    bgn: 0xff333335
+    bgn2: 0xff3b3a3c
+    bgn3: 0xff333335
+    tgn: 0xffffffff
+    bbs: 0xff4b4b4d
+    tbs: 0xffffffff
+    bmk: 0xffdd4118
+    tajs: 0xffcccccc
+    tajs2: 0xff272729
+    bjt: 0xff333335
+    bh1: 0xff100f12
+    th1: 0xff8f755c
+    bh2: 0xff100f12
+    th2: 0xff8f755c
+    bh3: 0xff100f12
+    th3: 0xff8f755c
+    bh4: 0xff100f12
+    th4: 0xff8f755c
+    bsz1: 0xff333335
+    bsz2: 0xff333335
+    bzyplus: 0xff391913
+    bzymix: 0xff391913
+    bzymixin: 0xff391913
+    grey1: 0xff6b767a
+    blue1: 0xff100f12
+    blued: 0xffdd4118
+    baoe: 0xff100f12
+    taoe: 0xff8f755c
 
   brasil:
     name: "笆悉／Brasil"
@@ -577,6 +962,38 @@ preset_color_schemes:
     hilited_candidate_text_color: 0xffffff
     hilited_comment_text_color: 0xffffff
     hilited_candidate_back_color: 0xf7c716
+    bkg: 0xff119355
+    tkg: 0xffffffff
+    benter: 0xfff7c716
+    tenter: 0xff000000
+    bgn: 0xff34a36e
+    bgn2: 0xff3ba673
+    bgn3: 0xff34a36e
+    tgn: 0xffffffff
+    bbs: 0xff4cae7f
+    tbs: 0xffffffff
+    bmk: 0xfff7c716
+    tajs: 0xffcccccc
+    tajs2: 0xff289d66
+    bjt: 0xff34a36e
+    bh1: 0xff119355
+    th1: 0xffffffff
+    bh2: 0xff119355
+    th2: 0xffffffff
+    bh3: 0xff119355
+    th3: 0xffffffff
+    bh4: 0xff119355
+    th4: 0xffffffff
+    bsz1: 0xff34a36e
+    bsz2: 0xff34a36e
+    bzyplus: 0xff3f9d48
+    bzymix: 0xff3f9d48
+    bzymixin: 0xff3f9d48
+    grey1: 0xff6b767a
+    blue1: 0xff119355
+    blued: 0xfff7c716
+    baoe: 0xff119355
+    taoe: 0xffffffff
 
   doraemon:
     name: "銅鑼衛門／Doraemon"
@@ -593,6 +1010,38 @@ preset_color_schemes:
     hilited_comment_text_color: 0xffffff
     hilited_candidate_back_color: 0x009fe8
     keyboard_back_color: 0xffffff
+    bkg: 0xffffffff
+    tkg: 0xff009fe8
+    benter: 0xff009fe8
+    tenter: 0xffffffff
+    bgn: 0xffd1d1d1
+    bgn2: 0xffc6c6c6
+    bgn3: 0xffd1d1d1
+    tgn: 0xff000000
+    bbs: 0xffb2b2b2
+    tbs: 0xff000000
+    bmk: 0xff009fe8
+    tajs: 0xff253238
+    tajs2: 0xffe0e0e0
+    bjt: 0xffd1d1d1
+    bh1: 0xffffffff
+    th1: 0xff009fe8
+    bh2: 0xffffffff
+    th2: 0xff009fe8
+    bh3: 0xffffffff
+    th3: 0xff009fe8
+    bh4: 0xffffffff
+    th4: 0xff009fe8
+    bsz1: 0xffd1d1d1
+    bsz2: 0xffd1d1d1
+    bzyplus: 0xffd8f0fb
+    bzymix: 0xffd8f0fb
+    bzymixin: 0xffd8f0fb
+    grey1: 0xff8b969a
+    blue1: 0xffffffff
+    blued: 0xff009fe8
+    baoe: 0xffffffff
+    taoe: 0xff009fe8
 
   espagna:
     name: "埃斯巴尼亞／España"
@@ -608,6 +1057,38 @@ preset_color_schemes:
     hilited_candidate_text_color: 0xffffff
     hilited_comment_text_color: 0xffffff
     hilited_candidate_back_color: 0xf7b52c
+    bkg: 0xffc30d23
+    tkg: 0xffffffff
+    benter: 0xfff7b52c
+    tenter: 0xff000000
+    bgn: 0xffcc3144
+    bgn2: 0xffcd384a
+    bgn3: 0xffcc3144
+    tgn: 0xffffffff
+    bbs: 0xffd2495a
+    tbs: 0xffffffff
+    bmk: 0xfff7b52c
+    tajs: 0xffcccccc
+    tajs2: 0xffc92539
+    bjt: 0xffcc3144
+    bh1: 0xffc30d23
+    th1: 0xffffffff
+    bh2: 0xffc30d23
+    th2: 0xffffffff
+    bh3: 0xffc30d23
+    th3: 0xffffffff
+    bh4: 0xffc30d23
+    th4: 0xffffffff
+    bsz1: 0xffcc3144
+    bsz2: 0xffcc3144
+    bzyplus: 0xffcd2e24
+    bzymix: 0xffcd2e24
+    bzymixin: 0xffcd2e24
+    grey1: 0xff6b767a
+    blue1: 0xffc30d23
+    blued: 0xfff7b52c
+    baoe: 0xffc30d23
+    taoe: 0xffffffff
 
   gholabok:
     name: "胡蘿菔／Gholabok"
@@ -623,6 +1104,38 @@ preset_color_schemes:
     hilited_candidate_text_color: 0xffffff
     hilited_comment_text_color: 0xffffff
     hilited_candidate_back_color: 0xed6d3d
+    bkg: 0xffe83929
+    tkg: 0xffffffff
+    benter: 0xffed6d3d
+    tenter: 0xffffffff
+    bgn: 0xffeb5649
+    bgn2: 0xffec5c4f
+    bgn3: 0xffeb5649
+    tgn: 0xffffffff
+    bbs: 0xffed6a5e
+    tbs: 0xffffffff
+    bmk: 0xffed6d3d
+    tajs: 0xffcccccc
+    tajs2: 0xffea4c3e
+    bjt: 0xffeb5649
+    bh1: 0xffe83929
+    th1: 0xffffffff
+    bh2: 0xffe83929
+    th2: 0xffffffff
+    bh3: 0xffe83929
+    th3: 0xffffffff
+    bh4: 0xffe83929
+    th4: 0xffffffff
+    bsz1: 0xffeb5649
+    bsz2: 0xffeb5649
+    bzyplus: 0xffe9432d
+    bzymix: 0xffe9432d
+    bzymixin: 0xffe9432d
+    grey1: 0xff6b767a
+    blue1: 0xffe83929
+    blued: 0xffed6d3d
+    baoe: 0xffe83929
+    taoe: 0xffffffff
 
   kuma_shuzboz:
     name: "熊出沒／Kuma Shuzboz"
@@ -638,6 +1151,38 @@ preset_color_schemes:
     hilited_candidate_text_color: 0xffffff
     hilited_comment_text_color: 0xffffff
     hilited_candidate_back_color: 0x000000
+    bkg: 0xfff8b62d
+    tkg: 0xffffffff
+    benter: 0xff000000
+    tenter: 0xffffffff
+    bgn: 0xffcb9524
+    bgn2: 0xffc18d23
+    bgn3: 0xffcb9524
+    tgn: 0xffffffff
+    bbs: 0xffad7f1f
+    tbs: 0xffffffff
+    bmk: 0xff000000
+    tajs: 0xff253238
+    tajs2: 0xffdaa027
+    bjt: 0xffcb9524
+    bh1: 0xfff8b62d
+    th1: 0xffffffff
+    bh2: 0xfff8b62d
+    th2: 0xffffffff
+    bh3: 0xfff8b62d
+    th3: 0xffffffff
+    bh4: 0xfff8b62d
+    th4: 0xffffffff
+    bsz1: 0xffcb9524
+    bsz2: 0xffcb9524
+    bzyplus: 0xffd29a26
+    bzymix: 0xffd29a26
+    bzymixin: 0xffd29a26
+    grey1: 0xff8b969a
+    blue1: 0xfff8b62d
+    blued: 0xff000000
+    baoe: 0xfff8b62d
+    taoe: 0xffffffff
 
   kuon:
     name: "琨／Kuon"
@@ -653,6 +1198,38 @@ preset_color_schemes:
     hilited_candidate_text_color: 0x3eb370
     hilited_comment_text_color: 0x3eb370
     hilited_candidate_back_color: 0xffffff
+    bkg: 0xff3eb370
+    tkg: 0xffffffff
+    benter: 0xffffffff
+    tenter: 0xff000000
+    bgn: 0xff32925b
+    bgn2: 0xff308b57
+    bgn3: 0xff32925b
+    tgn: 0xffffffff
+    bbs: 0xff2b7d4e
+    tbs: 0xffffffff
+    bmk: 0xffffffff
+    tajs: 0xff253238
+    tajs2: 0xff369d62
+    bjt: 0xff32925b
+    bh1: 0xff3eb370
+    th1: 0xffffffff
+    bh2: 0xff3eb370
+    th2: 0xffffffff
+    bh3: 0xff3eb370
+    th3: 0xffffffff
+    bh4: 0xff3eb370
+    th4: 0xffffffff
+    bsz1: 0xff32925b
+    bsz2: 0xff32925b
+    bzyplus: 0xff5abe85
+    bzymix: 0xff5abe85
+    bzymixin: 0xff5abe85
+    grey1: 0xff8b969a
+    blue1: 0xff3eb370
+    blued: 0xffffffff
+    baoe: 0xff3eb370
+    taoe: 0xffffffff
 
   macau:
     name: "澳門／Macau"
@@ -668,6 +1245,38 @@ preset_color_schemes:
     hilited_candidate_text_color: 0xffd900
     hilited_comment_text_color: 0xffd900
     hilited_candidate_back_color: 0xffffff
+    bkg: 0xff00a381
+    tkg: 0xffffffff
+    benter: 0xffffffff
+    tenter: 0xff000000
+    bgn: 0xff26b093
+    bgn2: 0xff2db397
+    bgn3: 0xff26b093
+    tgn: 0xffffffff
+    bbs: 0xff3fbaa0
+    tbs: 0xffffffff
+    bmk: 0xffffffff
+    tajs: 0xffcccccc
+    tajs2: 0xff19ac8d
+    bjt: 0xff26b093
+    bh1: 0xff00a381
+    th1: 0xffffffff
+    bh2: 0xff00a381
+    th2: 0xffffffff
+    bh3: 0xff00a381
+    th3: 0xffffffff
+    bh4: 0xff00a381
+    th4: 0xffffffff
+    bsz1: 0xff26b093
+    bsz2: 0xff26b093
+    bzyplus: 0xff33b59a
+    bzymix: 0xff33b59a
+    bzymixin: 0xff33b59a
+    grey1: 0xff6b767a
+    blue1: 0xff00a381
+    blued: 0xffffffff
+    baoe: 0xff00a381
+    taoe: 0xffffffff
 
   nba:
     name: "NBA"
@@ -683,6 +1292,38 @@ preset_color_schemes:
     hilited_candidate_text_color: 0xffffff
     hilited_comment_text_color: 0xffffff
     hilited_candidate_back_color: 0xd71e54
+    bkg: 0xff006ab7
+    tkg: 0xffffffff
+    benter: 0xffd71e54
+    tenter: 0xffffffff
+    bgn: 0xff2680c1
+    bgn2: 0xff2d84c3
+    bgn3: 0xff2680c1
+    tgn: 0xffffffff
+    bbs: 0xff3f8fc9
+    tbs: 0xffffffff
+    bmk: 0xffd71e54
+    tajs: 0xffcccccc
+    tajs2: 0xff1978be
+    bjt: 0xff2680c1
+    bh1: 0xff006ab7
+    th1: 0xffffffff
+    bh2: 0xff006ab7
+    th2: 0xffffffff
+    bh3: 0xff006ab7
+    th3: 0xffffffff
+    bh4: 0xff006ab7
+    th4: 0xffffffff
+    bsz1: 0xff2680c1
+    bsz2: 0xff2680c1
+    bzyplus: 0xff2b5aa3
+    bzymix: 0xff2b5aa3
+    bzymixin: 0xff2b5aa3
+    grey1: 0xff6b767a
+    blue1: 0xff006ab7
+    blued: 0xffd71e54
+    baoe: 0xff006ab7
+    taoe: 0xffffffff
 
   ps4:
     name: "遊驛四／PS4"
@@ -698,6 +1339,38 @@ preset_color_schemes:
     hilited_candidate_text_color: 0xffffff
     hilited_comment_text_color: 0xffffff
     hilited_candidate_back_color: 0x009fe8
+    bkg: 0xff000000
+    tkg: 0xffffffff
+    benter: 0xff009fe8
+    tenter: 0xffffffff
+    bgn: 0xff262626
+    bgn2: 0xff2d2d2d
+    bgn3: 0xff262626
+    tgn: 0xffffffff
+    bbs: 0xff3f3f3f
+    tbs: 0xffffffff
+    bmk: 0xff009fe8
+    tajs: 0xffcccccc
+    tajs2: 0xff191919
+    bjt: 0xff262626
+    bh1: 0xff000000
+    th1: 0xffffffff
+    bh2: 0xff000000
+    th2: 0xffffffff
+    bh3: 0xff000000
+    th3: 0xffffffff
+    bh4: 0xff000000
+    th4: 0xffffffff
+    bsz1: 0xff262626
+    bsz2: 0xff262626
+    bzyplus: 0xff001f2e
+    bzymix: 0xff001f2e
+    bzymixin: 0xff001f2e
+    grey1: 0xff6b767a
+    blue1: 0xff000000
+    blued: 0xff009fe8
+    baoe: 0xff000000
+    taoe: 0xffffffff
 
   skype:
     name: "斯蓋普／Skype"
@@ -713,6 +1386,38 @@ preset_color_schemes:
     hilited_candidate_text_color: 0x00adef
     hilited_comment_text_color: 0x00adef
     hilited_candidate_back_color: 0xffffff
+    bkg: 0xff00adef
+    tkg: 0xffffffff
+    benter: 0xffffffff
+    tenter: 0xff000000
+    bgn: 0xff008dc3
+    bgn2: 0xff0086ba
+    bgn3: 0xff008dc3
+    tgn: 0xffffffff
+    bbs: 0xff0079a7
+    tbs: 0xffffffff
+    bmk: 0xffffffff
+    tajs: 0xff253238
+    tajs2: 0xff0098d2
+    bjt: 0xff008dc3
+    bh1: 0xff00adef
+    th1: 0xffffffff
+    bh2: 0xff00adef
+    th2: 0xffffffff
+    bh3: 0xff00adef
+    th3: 0xffffffff
+    bh4: 0xff00adef
+    th4: 0xffffffff
+    bsz1: 0xff008dc3
+    bsz2: 0xff008dc3
+    bzyplus: 0xff26b9f1
+    bzymix: 0xff26b9f1
+    bzymixin: 0xff26b9f1
+    grey1: 0xff8b969a
+    blue1: 0xff00adef
+    blued: 0xffffffff
+    baoe: 0xff00adef
+    taoe: 0xffffffff
 
   xbox_silver:
     name: "銀色叉盒／Xbox Silver"
@@ -728,6 +1433,38 @@ preset_color_schemes:
     hilited_candidate_text_color: 0xffffff
     hilited_comment_text_color: 0xffffff
     hilited_candidate_back_color: 0x288c44
+    bkg: 0xffeeeeef
+    tkg: 0xff8dc21f
+    benter: 0xff288c44
+    tenter: 0xffffffff
+    bgn: 0xffc3c3c3
+    bgn2: 0xffb9b9ba
+    bgn3: 0xffc3c3c3
+    tgn: 0xff000000
+    bbs: 0xffa6a6a7
+    tbs: 0xff000000
+    bmk: 0xff288c44
+    tajs: 0xff253238
+    tajs2: 0xffd1d1d2
+    bjt: 0xffc3c3c3
+    bh1: 0xffeeeeef
+    th1: 0xff8dc21f
+    bh2: 0xffeeeeef
+    th2: 0xff8dc21f
+    bh3: 0xffeeeeef
+    th3: 0xff8dc21f
+    bh4: 0xffeeeeef
+    th4: 0xff8dc21f
+    bsz1: 0xffc3c3c3
+    bsz2: 0xffc3c3c3
+    bzyplus: 0xffd0dfd5
+    bzymix: 0xffd0dfd5
+    bzymixin: 0xffd0dfd5
+    grey1: 0xff8b969a
+    blue1: 0xffeeeeef
+    blued: 0xff288c44
+    baoe: 0xffeeeeef
+    taoe: 0xff8dc21f
 
   youtube:
     name: "YouTube"
@@ -743,6 +1480,38 @@ preset_color_schemes:
     hilited_candidate_text_color: 0xffffff
     hilited_comment_text_color: 0xffffff
     hilited_candidate_back_color: 0xc30d23
+    bkg: 0xffdedede
+    tkg: 0xff000000
+    benter: 0xffc30d23
+    tenter: 0xffffffff
+    bgn: 0xffb6b6b6
+    bgn2: 0xffadadad
+    bgn3: 0xffb6b6b6
+    tgn: 0xff000000
+    bbs: 0xff9b9b9b
+    tbs: 0xffffffff
+    bmk: 0xffc30d23
+    tajs: 0xff253238
+    tajs2: 0xffc3c3c3
+    bjt: 0xffb6b6b6
+    bh1: 0xffdedede
+    th1: 0xff000000
+    bh2: 0xffdedede
+    th2: 0xff000000
+    bh3: 0xffdedede
+    th3: 0xff000000
+    bh4: 0xffdedede
+    th4: 0xff000000
+    bsz1: 0xffb6b6b6
+    bsz2: 0xffb6b6b6
+    bzyplus: 0xffd9bec1
+    bzymix: 0xffd9bec1
+    bzymixin: 0xffd9bec1
+    grey1: 0xff8b969a
+    blue1: 0xffdedede
+    blued: 0xffc30d23
+    baoe: 0xffdedede
+    taoe: 0xff000000
 
   so_young:
     name: "致青春／So Young"
@@ -764,6 +1533,32 @@ preset_color_schemes:
     bzyplus: 0xf5f4e6 #0xfff8e5
     bzymix: 0xf5f4e6 #0xfff8e5
     bzymixin: 0xf5f4e6 #0xfff8e5
+    bkg: 0xfffdf6e3
+    tkg: 0xff657b83
+    benter: 0xff2aa198
+    tenter: 0xffffffff
+    bgn2: 0xffc5bfb1
+    bgn3: 0xffcfc9ba
+    tgn: 0xff000000
+    bbs: 0xffb1ac9e
+    tbs: 0xff000000
+    tajs: 0xff253238
+    tajs2: 0xffded8c7
+    bh1: 0xfffdf6e3
+    th1: 0xff657b83
+    bh2: 0xfffdf6e3
+    th2: 0xff657b83
+    bh3: 0xfffdf6e3
+    th3: 0xff657b83
+    bh4: 0xfffdf6e3
+    th4: 0xff657b83
+    bsz1: 0xffcfc9ba
+    bsz2: 0xffcfc9ba
+    grey1: 0xff8b969a
+    blue1: 0xfffdf6e3
+    blued: 0xff2aa198
+    baoe: 0xfffdf6e3
+    taoe: 0xff657b83
 
   smurfs:
     name: "藍精靈／Smurfs"
@@ -780,6 +1575,38 @@ preset_color_schemes:
     hilited_comment_text_color: 0xf6f6f6
     hilited_candidate_back_color: 0x6dbcdb
     keyboard_back_color: 0x1778bf
+    bkg: 0xff1778bf
+    tkg: 0xfff6f6f6
+    benter: 0xff6dbcdb
+    tenter: 0xff000000
+    bgn: 0xff398cc8
+    bgn2: 0xff4090ca
+    bgn3: 0xff398cc8
+    tgn: 0xffffffff
+    bbs: 0xff5199cf
+    tbs: 0xffffffff
+    bmk: 0xff6dbcdb
+    tajs: 0xffcccccc
+    tajs2: 0xff2e85c5
+    bjt: 0xff398cc8
+    bh1: 0xff1778bf
+    th1: 0xfff6f6f6
+    bh2: 0xff1778bf
+    th2: 0xfff6f6f6
+    bh3: 0xff1778bf
+    th3: 0xfff6f6f6
+    bh4: 0xff1778bf
+    th4: 0xfff6f6f6
+    bsz1: 0xff398cc8
+    bsz2: 0xff398cc8
+    bzyplus: 0xff2885c4
+    bzymix: 0xff2885c4
+    bzymixin: 0xff2885c4
+    grey1: 0xff6b767a
+    blue1: 0xff1778bf
+    blued: 0xff6dbcdb
+    baoe: 0xff1778bf
+    taoe: 0xfff6f6f6
 
   wii:
     name: "Wii"
@@ -795,6 +1622,38 @@ preset_color_schemes:
     hilited_candidate_text_color: 0xffffff
     hilited_comment_text_color: 0xffffff
     hilited_candidate_back_color: 0x33ccff
+    bkg: 0xffefefef
+    tkg: 0xff595757
+    benter: 0xff33ccff
+    tenter: 0xff000000
+    bgn: 0xffc3c3c3
+    bgn2: 0xffbababa
+    bgn3: 0xffc3c3c3
+    tgn: 0xff000000
+    bbs: 0xffa7a7a7
+    tbs: 0xff000000
+    bmk: 0xff33ccff
+    tajs: 0xff253238
+    tajs2: 0xffd2d2d2
+    bjt: 0xffc3c3c3
+    bh1: 0xffefefef
+    th1: 0xff595757
+    bh2: 0xffefefef
+    th2: 0xff595757
+    bh3: 0xffefefef
+    th3: 0xff595757
+    bh4: 0xffefefef
+    th4: 0xff595757
+    bsz1: 0xffc3c3c3
+    bsz2: 0xffc3c3c3
+    bzyplus: 0xffd2e9f1
+    bzymix: 0xffd2e9f1
+    bzymixin: 0xffd2e9f1
+    grey1: 0xff8b969a
+    blue1: 0xffefefef
+    blued: 0xff33ccff
+    baoe: 0xffefefef
+    taoe: 0xff595757
 
   android:
     name: "安卓／Android"
@@ -810,6 +1669,38 @@ preset_color_schemes:
     hilited_candidate_text_color: 0xffffff
     hilited_comment_text_color: 0xffffff
     hilited_candidate_back_color: 0xa8c450
+    bkg: 0xff1c7399
+    tkg: 0xffffffff
+    benter: 0xffa8c450
+    tenter: 0xff000000
+    bgn: 0xff3e88a8
+    bgn2: 0xff448cab
+    bgn3: 0xff3e88a8
+    tgn: 0xffffffff
+    bbs: 0xff5496b2
+    tbs: 0xffffffff
+    bmk: 0xffa8c450
+    tajs: 0xffcccccc
+    tajs2: 0xff3281a3
+    bjt: 0xff3e88a8
+    bh1: 0xff1c7399
+    th1: 0xffffffff
+    bh2: 0xff1c7399
+    th2: 0xffffffff
+    bh3: 0xff1c7399
+    th3: 0xffffffff
+    bh4: 0xff1c7399
+    th4: 0xffffffff
+    bsz1: 0xff3e88a8
+    bsz2: 0xff3e88a8
+    bzyplus: 0xff38838a
+    bzymix: 0xff38838a
+    bzymixin: 0xff38838a
+    grey1: 0xff6b767a
+    blue1: 0xff1c7399
+    blued: 0xffa8c450
+    baoe: 0xff1c7399
+    taoe: 0xffffffff
 
   cool_breeze:
     name: "清風／Cool Breeze"
@@ -823,6 +1714,38 @@ preset_color_schemes:
     hilited_candidate_text_color: 0x3A006F
     hilited_candidate_back_color: 0xACD6FF
     keyboard_back_color: 0xFBFBFF
+    bkg: 0xfffbfbff
+    tkg: 0xff009100
+    benter: 0xffacd6ff
+    tenter: 0xff000000
+    bgn: 0xffcdcdd1
+    bgn2: 0xffc3c3c6
+    bgn3: 0xffcdcdd1
+    tgn: 0xff000000
+    bbs: 0xffafafb2
+    tbs: 0xff000000
+    bmk: 0xffacd6ff
+    tajs: 0xff253238
+    tajs2: 0xffdcdce0
+    bjt: 0xffcdcdd1
+    bh1: 0xfffbfbff
+    th1: 0xff009100
+    bh2: 0xfffbfbff
+    th2: 0xff009100
+    bh3: 0xfffbfbff
+    th3: 0xff009100
+    bh4: 0xfffbfbff
+    th4: 0xff009100
+    bsz1: 0xffcdcdd1
+    bsz2: 0xffcdcdd1
+    bzyplus: 0xffeff5ff
+    bzymix: 0xffeff5ff
+    bzymixin: 0xffeff5ff
+    grey1: 0xff8b969a
+    blue1: 0xfffbfbff
+    blued: 0xffacd6ff
+    baoe: 0xfffbfbff
+    taoe: 0xff009100
 
   google_plus:
     name: "Google+"
@@ -839,6 +1762,38 @@ preset_color_schemes:
     hilited_comment_text_color: 0xffffff
     hilited_candidate_back_color: 0xdd4b39
     keyboard_back_color: 0xffffff
+    bkg: 0xffffffff
+    tkg: 0xffdd4b39
+    benter: 0xffdd4b39
+    tenter: 0xffffffff
+    bgn: 0xffd1d1d1
+    bgn2: 0xffc6c6c6
+    bgn3: 0xffd1d1d1
+    tgn: 0xff000000
+    bbs: 0xffb2b2b2
+    tbs: 0xff000000
+    bmk: 0xffdd4b39
+    tajs: 0xff253238
+    tajs2: 0xffe0e0e0
+    bjt: 0xffd1d1d1
+    bh1: 0xffffffff
+    th1: 0xffdd4b39
+    bh2: 0xffffffff
+    th2: 0xffdd4b39
+    bh3: 0xffffffff
+    th3: 0xffdd4b39
+    bh4: 0xffffffff
+    th4: 0xffdd4b39
+    bsz1: 0xffd1d1d1
+    bsz2: 0xffd1d1d1
+    bzyplus: 0xfff9e4e1
+    bzymix: 0xfff9e4e1
+    bzymixin: 0xfff9e4e1
+    grey1: 0xff8b969a
+    blue1: 0xffffffff
+    blued: 0xffdd4b39
+    baoe: 0xffffffff
+    taoe: 0xffdd4b39
 
   modern_warfare:
     name: "現代戰爭／Modern Warfare"
@@ -858,6 +1813,32 @@ preset_color_schemes:
     bzyplus: 0x2f382e #0x1C3B16 #0x162e11
     bzymix: 0x2f382e #0x1C3B16 #0x162e11
     bzymixin: 0x2f382e #0x1C3B16 #0x162e11
+    bkg: 0xff0d1b0a
+    tkg: 0xffdcfeab
+    benter: 0xff636f67
+    tenter: 0xffffffff
+    bgn2: 0xff384436
+    bgn3: 0xff313d2e
+    tgn: 0xffffffff
+    bbs: 0xff495447
+    tbs: 0xffffffff
+    tajs: 0xffcccccc
+    tajs2: 0xff253122
+    bh1: 0xff0d1b0a
+    th1: 0xffdcfeab
+    bh2: 0xff0d1b0a
+    th2: 0xffdcfeab
+    bh3: 0xff0d1b0a
+    th3: 0xffdcfeab
+    bh4: 0xff0d1b0a
+    th4: 0xffdcfeab
+    bsz1: 0xff313d2e
+    bsz2: 0xff313d2e
+    grey1: 0xff6b767a
+    blue1: 0xff0d1b0a
+    blued: 0xff636f67
+    baoe: 0xff0d1b0a
+    taoe: 0xffdcfeab
 
   brisk:
     name: "輕盈／Brisk"
@@ -871,6 +1852,38 @@ preset_color_schemes:
     hilited_candidate_text_color: 0xdc3822
     hilited_candidate_back_color: 0xffffff
     keyboard_back_color: 0xffffff
+    bkg: 0xffffffff
+    tkg: 0xff575757
+    benter: 0xffffffff
+    tenter: 0xff000000
+    bgn: 0xffd1d1d1
+    bgn2: 0xffc6c6c6
+    bgn3: 0xffd1d1d1
+    tgn: 0xff000000
+    bbs: 0xffb2b2b2
+    tbs: 0xff000000
+    bmk: 0xffffffff
+    tajs: 0xff253238
+    tajs2: 0xffe0e0e0
+    bjt: 0xffd1d1d1
+    bh1: 0xffffffff
+    th1: 0xff575757
+    bh2: 0xffffffff
+    th2: 0xff575757
+    bh3: 0xffffffff
+    th3: 0xff575757
+    bh4: 0xffffffff
+    th4: 0xff575757
+    bsz1: 0xffd1d1d1
+    bsz2: 0xffd1d1d1
+    bzyplus: 0xffffffff
+    bzymix: 0xffffffff
+    bzymixin: 0xffffffff
+    grey1: 0xff8b969a
+    blue1: 0xffffffff
+    blued: 0xffffffff
+    baoe: 0xffffffff
+    taoe: 0xff575757
 
   starcraft_ii:
     name: "星際爭霸Ⅱ／StarCraft Ⅱ"
@@ -892,6 +1905,32 @@ preset_color_schemes:
     bzyplus: 0x0f253d
     bzymix: 0x0f253d
     bzymixin: 0x0f253d
+    bkg: 0xff0a1929
+    tkg: 0xffffffff
+    benter: 0xff1eadef
+    tenter: 0xffffffff
+    bgn2: 0xff36424f
+    bgn3: 0xff2e3b49
+    tgn: 0xffffffff
+    bbs: 0xff47525e
+    tbs: 0xffffffff
+    tajs: 0xffcccccc
+    tajs2: 0xff22303e
+    bh1: 0xff0a1929
+    th1: 0xffffffff
+    bh2: 0xff0a1929
+    th2: 0xffffffff
+    bh3: 0xff0a1929
+    th3: 0xffffffff
+    bh4: 0xff0a1929
+    th4: 0xffffffff
+    bsz1: 0xff2e3b49
+    bsz2: 0xff2e3b49
+    grey1: 0xff6b767a
+    blue1: 0xff0a1929
+    blued: 0xff1eadef
+    baoe: 0xff0a1929
+    taoe: 0xffffffff
 
   steam:
     name: "Steam"
@@ -913,6 +1952,32 @@ preset_color_schemes:
     bzyplus: 0x262521 #0x383631
     bzymix: 0x262521 #0x383631
     bzymixin: 0x262521 #0x383631
+    bkg: 0xff171614
+    tkg: 0xffffffff
+    benter: 0xff314259
+    tenter: 0xffffffff
+    bgn2: 0xff403f3e
+    bgn3: 0xff393837
+    tgn: 0xffffffff
+    bbs: 0xff51504e
+    tbs: 0xffffffff
+    tajs: 0xffcccccc
+    tajs2: 0xff2e2d2b
+    bh1: 0xff171614
+    th1: 0xffffffff
+    bh2: 0xff171614
+    th2: 0xffffffff
+    bh3: 0xff171614
+    th3: 0xffffffff
+    bh4: 0xff171614
+    th4: 0xffffffff
+    bsz1: 0xff393837
+    bsz2: 0xff393837
+    grey1: 0xff6b767a
+    blue1: 0xff171614
+    blued: 0xff314259
+    baoe: 0xff171614
+    taoe: 0xffffffff
 
   flypy:
     # description: |
@@ -932,6 +1997,38 @@ preset_color_schemes:
     hilited_candidate_text_color: 0xb00000
     hilited_comment_text_color: 0xb00000
     hilited_candidate_back_color: 0xffffff
+    bkg: 0xffffffff
+    tkg: 0xff0080ff
+    benter: 0xffffffff
+    tenter: 0xff000000
+    bgn: 0xffd1d1d1
+    bgn2: 0xffc6c6c6
+    bgn3: 0xffd1d1d1
+    tgn: 0xff000000
+    bbs: 0xffb2b2b2
+    tbs: 0xff000000
+    bmk: 0xffffffff
+    tajs: 0xff253238
+    tajs2: 0xffe0e0e0
+    bjt: 0xffd1d1d1
+    bh1: 0xffffffff
+    th1: 0xff0080ff
+    bh2: 0xffffffff
+    th2: 0xff0080ff
+    bh3: 0xffffffff
+    th3: 0xff0080ff
+    bh4: 0xffffffff
+    th4: 0xff0080ff
+    bsz1: 0xffd1d1d1
+    bsz2: 0xffd1d1d1
+    bzyplus: 0xffffffff
+    bzymix: 0xffffffff
+    bzymixin: 0xffffffff
+    grey1: 0xff8b969a
+    blue1: 0xffffffff
+    blued: 0xffffffff
+    baoe: 0xffffffff
+    taoe: 0xff0080ff
 
   tantsing:
     name: 丹青
@@ -946,6 +2043,38 @@ preset_color_schemes:
     candidate_text_color: 0x000000
     comment_text_color: 0x474747
     keyboard_back_color: 0xe3e3e3
+    bkg: 0xffe3e3e3
+    tkg: 0xff000000
+    benter: 0xff730b6f
+    tenter: 0xffffffff
+    bgn: 0xffbababa
+    bgn2: 0xffb1b1b1
+    bgn3: 0xffbababa
+    tgn: 0xff000000
+    bbs: 0xff9e9e9e
+    tbs: 0xffffffff
+    bmk: 0xff730b6f
+    tajs: 0xff253238
+    tajs2: 0xffc7c7c7
+    bjt: 0xffbababa
+    bh1: 0xffe3e3e3
+    th1: 0xff000000
+    bh2: 0xffe3e3e3
+    th2: 0xff000000
+    bh3: 0xffe3e3e3
+    th3: 0xff000000
+    bh4: 0xffe3e3e3
+    th4: 0xff000000
+    bsz1: 0xffbababa
+    bsz2: 0xffbababa
+    bzyplus: 0xffd2c2d1
+    bzymix: 0xffd2c2d1
+    bzymixin: 0xffd2c2d1
+    grey1: 0xff8b969a
+    blue1: 0xffe3e3e3
+    blued: 0xff730b6f
+    baoe: 0xffe3e3e3
+    taoe: 0xff000000
 
   yygc:
     name: "一葉孤城"
@@ -968,6 +2097,38 @@ preset_color_schemes:
     label_color: 0x7f7f7f
     off_key_text_color: 0x7f7f7f
     text_color: 0x7f7f7f
+    bkg: 0xffffffff
+    tkg: 0xff7f7f7f
+    benter: 0xffffffff
+    tenter: 0xff000000
+    bgn: 0xffd1d1d1
+    bgn2: 0xffc6c6c6
+    bgn3: 0xffd1d1d1
+    tgn: 0xff000000
+    bbs: 0xffb2b2b2
+    tbs: 0xff000000
+    bmk: 0xffffffff
+    tajs: 0xff253238
+    tajs2: 0xffe0e0e0
+    bjt: 0xffd1d1d1
+    bh1: 0xffffffff
+    th1: 0xff7f7f7f
+    bh2: 0xffffffff
+    th2: 0xff7f7f7f
+    bh3: 0xffffffff
+    th3: 0xff7f7f7f
+    bh4: 0xffffffff
+    th4: 0xff7f7f7f
+    bsz1: 0xffd1d1d1
+    bsz2: 0xffd1d1d1
+    bzyplus: 0xffffffff
+    bzymix: 0xffffffff
+    bzymixin: 0xffffffff
+    grey1: 0xff8b969a
+    blue1: 0xffffffff
+    blued: 0xffffffff
+    baoe: 0xffffffff
+    taoe: 0xff7f7f7f
 
 #剪貼簿等
 liquid_keyboard:
