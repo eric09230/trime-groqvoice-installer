@@ -373,6 +373,7 @@ trime-installer/
 |---|------|----------|
 | 1 | **數字鍵盤重複輸入** | `KP_0`~`KP_9` 改為 `num_0`~`num_9` + `functional: false` |
 | 2 | **剪貼簿/收藏無法叫出** | `command: liquid_keyboard` → `command: clipboard_window`（option: "0"=剪貼簿, "1"=收藏） |
+| 3 | **符號鍵盤(bqfh)導航列錯位** — `click: ''` 空佔位 key 在 v3.3.9 因缺少 width 導致寬度為 0，底部導航列（中文/英文/常用...）擠到錯誤位置 | 138 個空 key 加上 `width: 10`，涵蓋 bqfh1~14 中的 11 頁 |
 
 ### 注意事項
 
