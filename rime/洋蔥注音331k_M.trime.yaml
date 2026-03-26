@@ -5698,14 +5698,14 @@ preset_keyboards:
 
     - {click: '〃', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh14, swipe_down: Keyboard_bqfh2}
     - {click: '〻', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh14, swipe_down: Keyboard_bqfh2}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh14, swipe_down: Keyboard_bqfh2}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh14, swipe_down: Keyboard_bqfh2}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh14, swipe_down: Keyboard_bqfh2}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh14, swipe_down: Keyboard_bqfh2}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh14, swipe_down: Keyboard_bqfh2}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh14, swipe_down: Keyboard_bqfh2}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh14, swipe_down: Keyboard_bqfh2}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh14, swipe_down: Keyboard_bqfh2}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh14, swipe_down: Keyboard_bqfh2}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh14, swipe_down: Keyboard_bqfh2}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh14, swipe_down: Keyboard_bqfh2}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh14, swipe_down: Keyboard_bqfh2}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh14, swipe_down: Keyboard_bqfh2}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh14, swipe_down: Keyboard_bqfh2}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh14, swipe_down: Keyboard_bqfh2}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh14, swipe_down: Keyboard_bqfh2}
 
     - {click: Keyboard_bqfh1a, key_text_size: 12, key_back_color: bmk, key_text_color: tenter}
     - {click: Keyboard_bqfh2, key_text_size: 12, key_back_color: bgn, key_text_color: tenter}
@@ -5774,19 +5774,19 @@ preset_keyboards:
     - {click: '<>{Left}', key_text_size: "14", swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh1, swipe_down: Keyboard_bqfh3}
     - {click: '[]{Left}', key_text_size: "14", swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh1, swipe_down: Keyboard_bqfh3}
     - {click: '{}{Left}', key_text_size: "14", swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh1, swipe_down: Keyboard_bqfh3}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh1, swipe_down: Keyboard_bqfh3}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh1, swipe_down: Keyboard_bqfh3}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh1, swipe_down: Keyboard_bqfh3}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh1, swipe_down: Keyboard_bqfh3}
 
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh1, swipe_down: Keyboard_bqfh3}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh1, swipe_down: Keyboard_bqfh3}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh1, swipe_down: Keyboard_bqfh3}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh1, swipe_down: Keyboard_bqfh3}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh1, swipe_down: Keyboard_bqfh3}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh1, swipe_down: Keyboard_bqfh3}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh1, swipe_down: Keyboard_bqfh3}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh1, swipe_down: Keyboard_bqfh3}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh1, swipe_down: Keyboard_bqfh3}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh1, swipe_down: Keyboard_bqfh3}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh1, swipe_down: Keyboard_bqfh3}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh1, swipe_down: Keyboard_bqfh3}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh1, swipe_down: Keyboard_bqfh3}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh1, swipe_down: Keyboard_bqfh3}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh1, swipe_down: Keyboard_bqfh3}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh1, swipe_down: Keyboard_bqfh3}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh1, swipe_down: Keyboard_bqfh3}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh1, swipe_down: Keyboard_bqfh3}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh1, swipe_down: Keyboard_bqfh3}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh1, swipe_down: Keyboard_bqfh3}
 
     - {click: Keyboard_bqfh1a, key_text_size: 12, key_back_color: bgn, key_text_color: tenter}
     - {click: Keyboard_bqfh2, key_text_size: 12, key_back_color: bmk, key_text_color: tenter}
@@ -5928,27 +5928,27 @@ preset_keyboards:
     - {click: '｛｝{Left}', key_text_size: "14", swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh3, swipe_down: Keyboard_bqfh5}
     - {click: '＜＞{Left}', key_text_size: "14", swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh3, swipe_down: Keyboard_bqfh5}
 
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh3, swipe_down: Keyboard_bqfh5}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh3, swipe_down: Keyboard_bqfh5}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh3, swipe_down: Keyboard_bqfh5}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh3, swipe_down: Keyboard_bqfh5}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh3, swipe_down: Keyboard_bqfh5}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh3, swipe_down: Keyboard_bqfh5}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh3, swipe_down: Keyboard_bqfh5}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh3, swipe_down: Keyboard_bqfh5}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh3, swipe_down: Keyboard_bqfh5}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh3, swipe_down: Keyboard_bqfh5}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh3, swipe_down: Keyboard_bqfh5}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh3, swipe_down: Keyboard_bqfh5}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh3, swipe_down: Keyboard_bqfh5}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh3, swipe_down: Keyboard_bqfh5}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh3, swipe_down: Keyboard_bqfh5}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh3, swipe_down: Keyboard_bqfh5}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh3, swipe_down: Keyboard_bqfh5}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh3, swipe_down: Keyboard_bqfh5}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh3, swipe_down: Keyboard_bqfh5}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh3, swipe_down: Keyboard_bqfh5}
 
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh3, swipe_down: Keyboard_bqfh5}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh3, swipe_down: Keyboard_bqfh5}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh3, swipe_down: Keyboard_bqfh5}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh3, swipe_down: Keyboard_bqfh5}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh3, swipe_down: Keyboard_bqfh5}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh3, swipe_down: Keyboard_bqfh5}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh3, swipe_down: Keyboard_bqfh5}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh3, swipe_down: Keyboard_bqfh5}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh3, swipe_down: Keyboard_bqfh5}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh3, swipe_down: Keyboard_bqfh5}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh3, swipe_down: Keyboard_bqfh5}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh3, swipe_down: Keyboard_bqfh5}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh3, swipe_down: Keyboard_bqfh5}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh3, swipe_down: Keyboard_bqfh5}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh3, swipe_down: Keyboard_bqfh5}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh3, swipe_down: Keyboard_bqfh5}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh3, swipe_down: Keyboard_bqfh5}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh3, swipe_down: Keyboard_bqfh5}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh3, swipe_down: Keyboard_bqfh5}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh3, swipe_down: Keyboard_bqfh5}
 
     - {click: Keyboard_bqfh1a, key_text_size: 12, key_back_color: bgn, key_text_color: tenter}
     - {click: Keyboard_bqfh2, key_text_size: 12, key_back_color: bgn, key_text_color: tenter}
@@ -6010,25 +6010,25 @@ preset_keyboards:
 
     - {click: '﹛﹜{Left}', key_text_size: "14", swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh4, swipe_down: Keyboard_bqfh6}
     - {click: '﹤﹥{Left}', key_text_size: "14", swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh4, swipe_down: Keyboard_bqfh6}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh4, swipe_down: Keyboard_bqfh6}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh4, swipe_down: Keyboard_bqfh6}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh4, swipe_down: Keyboard_bqfh6}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh4, swipe_down: Keyboard_bqfh6}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh4, swipe_down: Keyboard_bqfh6}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh4, swipe_down: Keyboard_bqfh6}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh4, swipe_down: Keyboard_bqfh6}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh4, swipe_down: Keyboard_bqfh6}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh4, swipe_down: Keyboard_bqfh6}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh4, swipe_down: Keyboard_bqfh6}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh4, swipe_down: Keyboard_bqfh6}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh4, swipe_down: Keyboard_bqfh6}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh4, swipe_down: Keyboard_bqfh6}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh4, swipe_down: Keyboard_bqfh6}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh4, swipe_down: Keyboard_bqfh6}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh4, swipe_down: Keyboard_bqfh6}
 
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh4, swipe_down: Keyboard_bqfh6}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh4, swipe_down: Keyboard_bqfh6}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh4, swipe_down: Keyboard_bqfh6}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh4, swipe_down: Keyboard_bqfh6}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh4, swipe_down: Keyboard_bqfh6}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh4, swipe_down: Keyboard_bqfh6}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh4, swipe_down: Keyboard_bqfh6}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh4, swipe_down: Keyboard_bqfh6}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh4, swipe_down: Keyboard_bqfh6}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh4, swipe_down: Keyboard_bqfh6}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh4, swipe_down: Keyboard_bqfh6}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh4, swipe_down: Keyboard_bqfh6}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh4, swipe_down: Keyboard_bqfh6}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh4, swipe_down: Keyboard_bqfh6}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh4, swipe_down: Keyboard_bqfh6}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh4, swipe_down: Keyboard_bqfh6}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh4, swipe_down: Keyboard_bqfh6}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh4, swipe_down: Keyboard_bqfh6}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh4, swipe_down: Keyboard_bqfh6}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh4, swipe_down: Keyboard_bqfh6}
 
     - {click: Keyboard_bqfh1a, key_text_size: 12, key_back_color: bgn, key_text_color: tenter}
     - {click: Keyboard_bqfh2, key_text_size: 12, key_back_color: bgn, key_text_color: tenter}
@@ -6095,21 +6095,21 @@ preset_keyboards:
     - {click: '‱', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh5, swipe_down: Keyboard_bqfh7}
     - {click: '℃', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh5, swipe_down: Keyboard_bqfh7}
     - {click: '℉', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh5, swipe_down: Keyboard_bqfh7}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh5, swipe_down: Keyboard_bqfh7}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh5, swipe_down: Keyboard_bqfh7}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh5, swipe_down: Keyboard_bqfh7}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh5, swipe_down: Keyboard_bqfh7}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh5, swipe_down: Keyboard_bqfh7}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh5, swipe_down: Keyboard_bqfh7}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh5, swipe_down: Keyboard_bqfh7}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh5, swipe_down: Keyboard_bqfh7}
 
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh5, swipe_down: Keyboard_bqfh7}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh5, swipe_down: Keyboard_bqfh7}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh5, swipe_down: Keyboard_bqfh7}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh5, swipe_down: Keyboard_bqfh7}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh5, swipe_down: Keyboard_bqfh7}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh5, swipe_down: Keyboard_bqfh7}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh5, swipe_down: Keyboard_bqfh7}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh5, swipe_down: Keyboard_bqfh7}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh5, swipe_down: Keyboard_bqfh7}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh5, swipe_down: Keyboard_bqfh7}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh5, swipe_down: Keyboard_bqfh7}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh5, swipe_down: Keyboard_bqfh7}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh5, swipe_down: Keyboard_bqfh7}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh5, swipe_down: Keyboard_bqfh7}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh5, swipe_down: Keyboard_bqfh7}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh5, swipe_down: Keyboard_bqfh7}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh5, swipe_down: Keyboard_bqfh7}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh5, swipe_down: Keyboard_bqfh7}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh5, swipe_down: Keyboard_bqfh7}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh5, swipe_down: Keyboard_bqfh7}
 
     - {click: Keyboard_bqfh1a, key_text_size: 12, key_back_color: bgn, key_text_color: tenter}
     - {click: Keyboard_bqfh2, key_text_size: 12, key_back_color: bgn, key_text_color: tenter}
@@ -6174,23 +6174,23 @@ preset_keyboards:
     - {click: '☓', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh6, swipe_down: Keyboard_bqfh8}
     - {click: '㏂', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh6, swipe_down: Keyboard_bqfh8}
     - {click: '㏘', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh6, swipe_down: Keyboard_bqfh8}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh6, swipe_down: Keyboard_bqfh8}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh6, swipe_down: Keyboard_bqfh8}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh6, swipe_down: Keyboard_bqfh8}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh6, swipe_down: Keyboard_bqfh8}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh6, swipe_down: Keyboard_bqfh8}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh6, swipe_down: Keyboard_bqfh8}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh6, swipe_down: Keyboard_bqfh8}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh6, swipe_down: Keyboard_bqfh8}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh6, swipe_down: Keyboard_bqfh8}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh6, swipe_down: Keyboard_bqfh8}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh6, swipe_down: Keyboard_bqfh8}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh6, swipe_down: Keyboard_bqfh8}
 
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh6, swipe_down: Keyboard_bqfh8}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh6, swipe_down: Keyboard_bqfh8}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh6, swipe_down: Keyboard_bqfh8}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh6, swipe_down: Keyboard_bqfh8}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh6, swipe_down: Keyboard_bqfh8}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh6, swipe_down: Keyboard_bqfh8}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh6, swipe_down: Keyboard_bqfh8}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh6, swipe_down: Keyboard_bqfh8}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh6, swipe_down: Keyboard_bqfh8}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh6, swipe_down: Keyboard_bqfh8}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh6, swipe_down: Keyboard_bqfh8}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh6, swipe_down: Keyboard_bqfh8}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh6, swipe_down: Keyboard_bqfh8}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh6, swipe_down: Keyboard_bqfh8}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh6, swipe_down: Keyboard_bqfh8}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh6, swipe_down: Keyboard_bqfh8}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh6, swipe_down: Keyboard_bqfh8}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh6, swipe_down: Keyboard_bqfh8}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh6, swipe_down: Keyboard_bqfh8}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh6, swipe_down: Keyboard_bqfh8}
 
     - {click: Keyboard_bqfh1a, key_text_size: 12, key_back_color: bgn, key_text_color: tenter}
     - {click: Keyboard_bqfh2, key_text_size: 12, key_back_color: bgn, key_text_color: tenter}
@@ -6262,15 +6262,15 @@ preset_keyboards:
     - {click: '▴', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh7, swipe_down: Keyboard_bqfh9}
 
     - {click: '▾', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh7, swipe_down: Keyboard_bqfh9}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh7, swipe_down: Keyboard_bqfh9}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh7, swipe_down: Keyboard_bqfh9}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh7, swipe_down: Keyboard_bqfh9}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh7, swipe_down: Keyboard_bqfh9}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh7, swipe_down: Keyboard_bqfh9}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh7, swipe_down: Keyboard_bqfh9}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh7, swipe_down: Keyboard_bqfh9}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh7, swipe_down: Keyboard_bqfh9}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh7, swipe_down: Keyboard_bqfh9}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh7, swipe_down: Keyboard_bqfh9}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh7, swipe_down: Keyboard_bqfh9}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh7, swipe_down: Keyboard_bqfh9}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh7, swipe_down: Keyboard_bqfh9}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh7, swipe_down: Keyboard_bqfh9}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh7, swipe_down: Keyboard_bqfh9}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh7, swipe_down: Keyboard_bqfh9}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh7, swipe_down: Keyboard_bqfh9}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh7, swipe_down: Keyboard_bqfh9}
 
     - {click: Keyboard_bqfh8, key_text_size: 12, key_back_color: bmk, key_text_color: tenter}
     - {click: Keyboard_bqfh9, key_text_size: 12, key_back_color: bgn, key_text_color: tenter}
@@ -6510,7 +6510,7 @@ preset_keyboards:
     - {click: '┒', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh10, swipe_down: Keyboard_bqfh12}
     - {click: '┖', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh10, swipe_down: Keyboard_bqfh12}
     - {click: '┚', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh10, swipe_down: Keyboard_bqfh12}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh10, swipe_down: Keyboard_bqfh12}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh10, swipe_down: Keyboard_bqfh12}
     - {click: '┃', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh10, swipe_down: Keyboard_bqfh12}
 
     - {click: Keyboard_bqfh8, key_text_size: 12, key_back_color: bgn, key_text_color: tenter}
@@ -6581,15 +6581,15 @@ preset_keyboards:
     - {click: '╜', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh11, swipe_down: Keyboard_bqfh13}
     - {click: '╱', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh11, swipe_down: Keyboard_bqfh13}
 
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh11, swipe_down: Keyboard_bqfh13}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh11, swipe_down: Keyboard_bqfh13}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh11, swipe_down: Keyboard_bqfh13}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh11, swipe_down: Keyboard_bqfh13}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh11, swipe_down: Keyboard_bqfh13}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh11, swipe_down: Keyboard_bqfh13}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh11, swipe_down: Keyboard_bqfh13}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh11, swipe_down: Keyboard_bqfh13}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh11, swipe_down: Keyboard_bqfh13}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh11, swipe_down: Keyboard_bqfh13}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh11, swipe_down: Keyboard_bqfh13}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh11, swipe_down: Keyboard_bqfh13}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh11, swipe_down: Keyboard_bqfh13}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh11, swipe_down: Keyboard_bqfh13}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh11, swipe_down: Keyboard_bqfh13}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh11, swipe_down: Keyboard_bqfh13}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh11, swipe_down: Keyboard_bqfh13}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh11, swipe_down: Keyboard_bqfh13}
     - {click: '╲', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh11, swipe_down: Keyboard_bqfh13}
 
     - {click: Keyboard_bqfh8, key_text_size: 12, key_back_color: bgn, key_text_color: tenter}
@@ -6669,7 +6669,7 @@ preset_keyboards:
     - {click: '☤', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh12, swipe_down: Keyboard_bqfh14}
     - {click: '☮', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh12, swipe_down: Keyboard_bqfh14}
     - {click: '❅', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh12, swipe_down: Keyboard_bqfh14}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh12, swipe_down: Keyboard_bqfh14}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh12, swipe_down: Keyboard_bqfh14}
 
     - {click: Keyboard_bqfh8, key_text_size: 12, key_back_color: bgn, key_text_color: tenter}
     - {click: Keyboard_bqfh9, key_text_size: 12, key_back_color: bgn, key_text_color: tenter}
@@ -6718,38 +6718,38 @@ preset_keyboards:
     - {click: '︑', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
     - {click: '︱', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
 
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
 
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
 
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
-    - {click: '', swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
+    - {click: '', width: 10, swipe_left: Keyboard_kao, swipe_right: Keyboard_bqrw1, swipe_up: Keyboard_bqfh13, swipe_down: Keyboard_bqfh1}
 
     - {click: Keyboard_bqfh8, key_text_size: 12, key_back_color: bgn, key_text_color: tenter}
     - {click: Keyboard_bqfh9, key_text_size: 12, key_back_color: bgn, key_text_color: tenter}
