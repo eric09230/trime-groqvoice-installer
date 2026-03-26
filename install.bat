@@ -49,6 +49,9 @@ echo.
 REM Grant permissions BEFORE pushing data or opening apps
 echo [4/8] Granting permissions...
 adb shell pm grant com.groqvoice android.permission.RECORD_AUDIO
+adb shell pm grant com.groqvoice android.permission.READ_EXTERNAL_STORAGE 2>nul
+adb shell pm grant com.groqvoice android.permission.WRITE_EXTERNAL_STORAGE 2>nul
+adb shell appops set com.groqvoice MANAGE_EXTERNAL_STORAGE allow 2>nul
 adb shell pm grant com.osfans.trime android.permission.READ_EXTERNAL_STORAGE 2>nul
 adb shell pm grant com.osfans.trime android.permission.WRITE_EXTERNAL_STORAGE 2>nul
 adb shell appops set com.osfans.trime MANAGE_EXTERNAL_STORAGE allow 2>nul

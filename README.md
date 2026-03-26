@@ -86,8 +86,9 @@ GroqVoice 需要 Groq API Key 才能使用語音轉文字功能。
 ### 步驟二：設定 GroqVoice 語音輸入
 
 1. **開啟手機上的 GroqVoice app**
-2. 貼上你的 Groq API Key → 點擊「Save」
+2. 貼上你的 Groq API Key → 點擊「Add API Key」
 3. 可依需求開啟 LLM 文字精修等功能（詳見下方功能說明）
+4. **建議設定完成後拉到最底按「Backup」**，將設定備份到 `/storage/emulated/0/GroqVoice/backup.json`，日後重裝 app 只需按「Restore」即可一鍵還原所有設定及 API keys
 
 ### 步驟三：測試
 
@@ -108,6 +109,7 @@ GroqVoice 需要 Groq API Key 才能使用語音轉文字功能。
 | 字數門檻 | 每個功能可設定最少字數才啟動 |
 | 多平台 LLM | 支援 Groq / OpenAI / OpenRouter |
 | 自動送出 | 可選擇語音輸入後自動按 Enter 送出 |
+| 設定備份/還原 | 備份 API keys 及所有設定到手機儲存空間，重裝不遺失 |
 
 ## 洋蔥注音 trime.yaml 鍵盤方案功能總覽
 
@@ -364,3 +366,9 @@ adb shell ime enable com.groqvoice/.GroqVoiceIME
 
 **Q: GroqVoice 閃退**
 A: 請先開啟 GroqVoice app 確認已授予錄音權限和設定 API Key。
+
+**Q: 重裝 GroqVoice 後要重新輸入 API Key？**
+A: 如果之前有按過「Backup」，重裝後打開 GroqVoice → 拉到最底按「Restore」即可還原。備份檔位於 `/storage/emulated/0/GroqVoice/backup.json`，不會隨 app 解除安裝而刪除。
+
+**Q: GroqVoice 卡在錄音畫面無法退出**
+A: 畫面最底部有「Switch Keyboard」按鈕可隨時切回上一個鍵盤。
