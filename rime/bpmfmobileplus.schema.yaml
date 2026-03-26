@@ -14,7 +14,7 @@ schema:
     - sy_bpmf
     - latinin1
     - jpnin1
-    - hangeul
+    - hangeul_hnc_m
     - mobile_bpmf
 
 switches:

@@ -382,6 +382,12 @@ trime-installer/
 | 3 | **符號鍵盤(bqfh)導航列錯位** — `click: ''` 空佔位 key 在 v3.3.9 因缺少 width 導致寬度為 0，底部導航列（中文/英文/常用...）擠到錯誤位置 | 138 個空 key 加上 `width: 10`，涵蓋 bqfh1~14 中的 11 頁 |
 | 4 | **多數配色方案鍵盤顏色異常** — 鍵盤佈局引用自訂色標（`bkg`、`benter`、`bbs`、`bzyplus` 等 30+ 個），但僅「標準配色！」和「原標準配色！」有定義，其餘 36 個方案全部缺失，導致切換配色後鍵盤變成整片同色 | 1. 在 `fallback_colors` 新增 30+ 項自訂色標回退鏈作為安全網 2. 為全部 36 個配色方案逐一推導並補齊自訂按鍵色（4 色分區：一般鍵=背景色、聲調鍵=accent 淡化、功能鍵/退格=背景加深/減淡、Enter=accent 色） |
 
+### Schema 修改（rime/bpmfmobileplus.schema.yaml）
+
+| # | 問題 | 修復方式 |
+|---|------|----------|
+| 1 | **按數字 7 無法輸入韓文** — `dependencies` 宣告 `hangeul`（形碼版），但 korea translator 使用 `hangeul_hnc_m.extended`（HNC 版），導致 prism 未被編譯，韓文翻譯器無法運作 | `dependencies` 從 `hangeul` 改為 `hangeul_hnc_m`，使部署時正確編譯 HNC 韓文 prism |
+
 ### 注意事項
 
 - `_H`（高版）和 `_L`（低版）透過 `__include: 洋蔥注音331k_M.trime.yaml:/` 繼承 M 版，不需另外修改
