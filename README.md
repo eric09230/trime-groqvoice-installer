@@ -1,5 +1,9 @@
 # TRIME 同文輸入法 + GroqVoice 語音輸入 一鍵安裝包
 
+[![GitHub release](https://img.shields.io/github/v/release/eric09230/trime-groqvoice-installer)](https://github.com/eric09230/trime-groqvoice-installer/releases)
+
+**專案連結**：https://github.com/eric09230/trime-groqvoice-installer
+
 ## 包含內容
 
 - **TRIME v3.3.9** — Android RIME 輸入法（洋蔥注音方案）
