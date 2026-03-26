@@ -84,6 +84,11 @@ colors:
 
 #界面風格、功能開關
 style:
+  switches_bar:
+    - {type: switch, name: ascii_mode}
+    - {type: action, label: 😀, action: Keyboard_bqrw1}
+    - {type: switch, name: simplification}
+    - {type: switch, name: ascii_punct}
   auto_caps: false #自動句首大寫:true|false|ascii
   background_dim_amount: 0.5
   candidate_font: han.ttf  #候選字體 #Arial Unicode.ttf
@@ -3317,8 +3322,8 @@ preset_keyboards:
       - {label: 'ˇ', hint: '集', click: 'text_3', long_click: '#', swipe_up: Up, swipe_down: Down, swipe_left: Left, swipe_right: Right, width: 9.75}
       - {label: 'ˋ', click: 'text_4', long_click: '$', swipe_up: Up, swipe_down: Down, swipe_left: Left, swipe_right: Right, width: 9.75}
       - {label: 'ㄓ', click: 'text_5', long_click: '%', swipe_up: Menu_duse, swipe_down: Down, swipe_left: Left, swipe_right: Right, width: 9.75}
-      - {label: 'ˊ', click: 'text_6_jp', long_click: '^', swipe_up: Up, swipe_down: Down, swipe_left: Left, swipe_right: Right, width: 9.75}
-      - {label: '˙', click: 'text_7_kr', long_click: '&', swipe_up: Up, swipe_down: Down, swipe_left: Left, swipe_right: Right, width: 9.75}
+      - {label: 'ˊ', click: 'text_6_jp', composing: 'text_6', long_click: '^', swipe_up: Up, swipe_down: Down, swipe_left: Left, swipe_right: Right, width: 9.75}
+      - {label: '˙', click: 'text_7_kr', composing: 'text_7', long_click: '&', swipe_up: Up, swipe_down: Down, swipe_left: Left, swipe_right: Right, width: 9.75}
       - {label: 'ㄚ', click: 'text_8', long_click: '*', swipe_up: switch_simp, swipe_down: Down, swipe_left: Left, swipe_right: Right, width: 9.75} #, key_back_color: blue1
       - {label: 'ㄞ', click: 'text_9', long_click: '=', swipe_up: switch_char_range, swipe_down: Down, swipe_left: Left, swipe_right: Right, width: 9.75} #, key_back_color: blue1
       - {label: 'ㄢ', click: 'text_0', long_click: '+', swipe_up: switch_emoji, swipe_down: Down, swipe_left: Left, swipe_right: Right, width: 11} #, key_back_color: blue1
@@ -3376,8 +3381,8 @@ preset_keyboards:
       - {label: 'ˇ', hint: '集', click: 'text_3', long_click: '#', width: 9.75}
       - {label: 'ˋ', click: 'text_4', long_click: '$', width: 9.75}
       - {label: 'ㄓ', click: 'text_5', long_click: '%', swipe_up: Menu_duse, width: 9.75}
-      - {label: 'ˊ', click: 'text_6_jp', long_click: '^', width: 9.75}
-      - {label: '˙', click: 'text_7_kr', long_click: '&', width: 9.75}
+      - {label: 'ˊ', click: 'text_6_jp', composing: 'text_6', long_click: '^', width: 9.75}
+      - {label: '˙', click: 'text_7_kr', composing: 'text_7', long_click: '&', width: 9.75}
       - {label: 'ㄚ', click: 'text_8', long_click: '*', swipe_up: switch_simp, width: 9.75} #, key_back_color: blue1
       - {label: 'ㄞ', click: 'text_9', long_click: '=', swipe_up: switch_char_range, width: 9.75} #, key_back_color: blue1
       - {label: 'ㄢ', click: 'text_0', long_click: '+', swipe_up: switch_emoji, width: 11} #, key_back_color: blue1
@@ -3436,8 +3441,8 @@ preset_keyboards:
       - {label: 'ˇ', hint: '集 3     ', click: 'text_3', long_click: '#', swipe_up: Page_Up, swipe_down: Page_Down, swipe_left: Home, swipe_right: End, width: 9.75, key_back_color: bzyplus} #swipe_up: Up, swipe_down: Down, swipe_left: Left, swipe_right: Right
       - {label: 'ˋ', hint: '拉 4     ', click: 'text_4', long_click: '$', swipe_up: Page_Up, swipe_down: Page_Down, swipe_left: Home, swipe_right: End, width: 9.75, key_back_color: bzyplus} #swipe_up: Up, swipe_down: Down, swipe_left: Left, swipe_right: Right
       - {label: 'ㄓ', hint: '5', click: 'text_5', long_click: '%', swipe_up: Menu_duse, width: 9.75}
-      - {label: 'ˊ', hint: '日 6     ', click: 'text_6_jp', long_click: '^', swipe_up: Up, swipe_down: Down, swipe_left: Left, swipe_right: Right, width: 9.75, key_back_color: bzyplus}
-      - {label: '˙', hint: '韓 7     ', click: 'text_7_kr', long_click: '&', swipe_up: Up, swipe_down: Down, swipe_left: Left, swipe_right: Right, width: 9.75, key_back_color: bzyplus}
+      - {label: 'ˊ', hint: '日 6     ', click: 'text_6_jp', composing: 'text_6', long_click: '^', swipe_up: Up, swipe_down: Down, swipe_left: Left, swipe_right: Right, width: 9.75, key_back_color: bzyplus}
+      - {label: '˙', hint: '韓 7     ', click: 'text_7_kr', composing: 'text_7', long_click: '&', swipe_up: Up, swipe_down: Down, swipe_left: Left, swipe_right: Right, width: 9.75, key_back_color: bzyplus}
       - {label: 'ㄚ', hint: '8', click: 'text_8', long_click: '*', swipe_up: switch_simp, width: 9.75} #, key_back_color: blue1
       - {label: 'ㄞ', hint: '9', click: 'text_9', long_click: '=', swipe_up: switch_char_range, width: 9.75} #, key_back_color: blue1
       - {label: 'ㄢ', hint: '0', click: 'text_0', long_click: '+', swipe_up: switch_emoji, width: 11} #, key_back_color: blue1
@@ -3495,8 +3500,8 @@ preset_keyboards:
       - {label: 'ˇ', hint: '集 3     ', click: 'text_3', long_click: '#', swipe_up: Page_Up, swipe_down: Page_Down, swipe_left: Home, swipe_right: End, width: 9.75, key_back_color: bzymix} #swipe_up: Up, swipe_down: Down, swipe_left: Left, swipe_right: Right
       - {label: 'ˋ', hint: '4', click: 'text_4', long_click: '$', swipe_up: Page_Up, swipe_down: Page_Down, swipe_left: Home, swipe_right: End, width: 9.75, key_back_color: bzymix} #swipe_up: Up, swipe_down: Down, swipe_left: Left, swipe_right: Right
       - {label: 'ㄓ', hint: '5', click: 'text_5', long_click: '%', swipe_up: Menu_duse, width: 9.75}
-      - {label: 'ˊ', hint: '6', click: 'text_6_jp', long_click: '^', swipe_up: Up, swipe_down: Down, swipe_left: Left, swipe_right: Right, width: 9.75, key_back_color: bzymix}
-      - {label: '˙', hint: 'ⓜ 7     ', click: 'text_7_kr', long_click: '&', swipe_up: Up, swipe_down: Down, swipe_left: Left, swipe_right: Right, width: 9.75, key_back_color: bzymix}
+      - {label: 'ˊ', hint: '6', click: 'text_6_jp', composing: 'text_6', long_click: '^', swipe_up: Up, swipe_down: Down, swipe_left: Left, swipe_right: Right, width: 9.75, key_back_color: bzymix}
+      - {label: '˙', hint: 'ⓜ 7     ', click: 'text_7_kr', composing: 'text_7', long_click: '&', swipe_up: Up, swipe_down: Down, swipe_left: Left, swipe_right: Right, width: 9.75, key_back_color: bzymix}
       - {label: 'ㄚ', hint: '8', click: 'text_8', long_click: '*', swipe_up: switch_simp, width: 9.75} #, key_back_color: blue1
       - {label: 'ㄞ', hint: '9', click: 'text_9', long_click: "'", swipe_up: switch_char_range, width: 9.75} #, key_back_color: blue1
       - {label: 'ㄢ', hint: '0', click: 'text_0', long_click: 'text_m3', swipe_up: switch_emoji, width: 11} #, key_back_color: blue1
@@ -3557,8 +3562,8 @@ preset_keyboards:
       - {label: 'ˇ', hint: '集 3     ', click: 'text_3', long_click: '#', swipe_up: Page_Up, swipe_down: Page_Down, swipe_left: Home, swipe_right: End, width: 9.75, key_back_color: bzymixin} #swipe_up: Up, swipe_down: Down, swipe_left: Left, swipe_right: Right
       - {label: 'ˋ', hint: '4', click: 'text_4', long_click: '$', swipe_up: Page_Up, swipe_down: Page_Down, swipe_left: Home, swipe_right: End, width: 9.75, key_back_color: bzymixin} #swipe_up: Up, swipe_down: Down, swipe_left: Left, swipe_right: Right
       - {label: 'ㄓ', hint: '5', click: 'text_5', long_click: '%', swipe_up: Menu_duse, width: 9.75}
-      - {label: 'ˊ', hint: '     6 日', click: 'text_6_jp', long_click: '^', swipe_up: Up, swipe_down: Down, swipe_left: Left, swipe_right: Right, width: 9.75, key_back_color: bzymixin}
-      - {label: '˙', hint: '     7 韓', click: 'text_7_kr', long_click: '&', swipe_up: Up, swipe_down: Down, swipe_left: Left, swipe_right: Right, width: 9.75, key_back_color: bzymixin}
+      - {label: 'ˊ', hint: '     6 日', click: 'text_6_jp', composing: 'text_6', long_click: '^', swipe_up: Up, swipe_down: Down, swipe_left: Left, swipe_right: Right, width: 9.75, key_back_color: bzymixin}
+      - {label: '˙', hint: '     7 韓', click: 'text_7_kr', composing: 'text_7', long_click: '&', swipe_up: Up, swipe_down: Down, swipe_left: Left, swipe_right: Right, width: 9.75, key_back_color: bzymixin}
       - {label: 'ㄚ', hint: '8', click: 'text_8', long_click: '*', swipe_up: switch_simp, width: 9.75} #, key_back_color: blue1
       - {label: 'ㄞ', hint: '9', click: 'text_9', long_click: '=', swipe_up: switch_char_range, width: 9.75} #, key_back_color: blue1
       - {label: 'ㄢ', hint: '0', click: 'text_0', long_click: '+', swipe_up: switch_emoji, width: 11} #, key_back_color: blue1
