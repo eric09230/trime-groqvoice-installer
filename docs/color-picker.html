@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>洋蔥注音 配色工具</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, 'Microsoft JhengHei', sans-serif; background: #1a1a2e; color: #eee; min-height: 100vh; padding: 16px 12px; }
+h1 { text-align: center; margin-bottom: 4px; font-size: 1.4em; }
+.subtitle { text-align: center; color: #888; margin-bottom: 16px; font-size: 0.85em; }
+.container { max-width: 420px; margin: 0 auto; }
+
+/* Color Pickers */
+.color-section { background: #16213e; border-radius: 12px; padding: 14px; margin-bottom: 14px; }
+.color-section h2 { font-size: 0.95em; margin-bottom: 10px; color: #aaa; }
+.color-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.color-row:last-child { margin-bottom: 0; }
+.color-label { flex: 1; font-size: 0.85em; }
+.color-desc { color: #777; font-size: 0.7em; }
+.color-input-wrap { position: relative; width: 42px; height: 42px; border-radius: 8px; overflow: hidden; border: 2px solid #333; cursor: pointer; flex-shrink: 0; }
+.color-input-wrap input[type="color"] { position: absolute; top: -4px; left: -4px; width: 50px; height: 50px; border: none; cursor: pointer; background: none; }
+.hex-display { font-family: monospace; font-size: 0.75em; color: #999; width: 62px; text-align: center; }
+
+/* Preset buttons */
+.preset-row { display: flex; gap: 6px; margin-bottom: 10px; flex-wrap: wrap; }
+.btn-preset { padding: 5px 10px; border: 1px solid #444; border-radius: 6px; background: #1a1a2e; color: #ccc; font-size: 0.75em; cursor: pointer; transition: border-color 0.2s; }
+.btn-preset:hover { border-color: #f57d51; }
+
+/* ===== Keyboard Preview ===== */
+.preview-section { background: #16213e; border-radius: 12px; padding: 14px; margin-bottom: 14px; }
+.preview-section h2 { font-size: 0.95em; margin-bottom: 10px; color: #aaa; }
+.keyboard-wrap { border-radius: 6px; overflow: hidden; }
+
+/* Candidate / Category bar */
+.candidate-bar { padding: 6px 8px 4px; display: flex; align-items: center; gap: 8px; font-size: 12px; }
+.candidate-bar .comment { font-size: 10px; opacity: 0.6; }
+.candidate-bar .highlight { padding: 3px 8px; border-radius: 4px; font-size: 13px; }
+.candidate-bar .normal { padding: 3px 5px; font-size: 13px; }
+
+.category-bar { display: flex; padding: 0 6px 4px; gap: 14px; font-size: 13px; }
+.category-bar .cat-item { padding: 2px 0; }
+.category-bar .cat-active { border-bottom: 2px solid; font-weight: bold; }
+
+/* Keyboard body */
+.kb-body { padding: 3px 2px 4px; }
+.kr { display: flex; gap: 3px; margin-bottom: 3px; }
+.kr:last-child { margin-bottom: 0; }
+
+/* Individual keys */
+.k { border-radius: 5px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; height: 38px; flex: 1; min-width: 0; box-shadow: 0 1px 1px rgba(0,0,0,0.15); }
+.k .main { font-size: 15px; line-height: 1; }
+.k .sub { font-size: 7px; opacity: 0.5; margin-top: 1px; }
+.k .hint-tl { position: absolute; top: 2px; left: 3px; font-size: 7px; opacity: 0.45; }
+.k .hint-tr { position: absolute; top: 2px; right: 3px; font-size: 7px; opacity: 0.45; }
+.k .hint-bl { position: absolute; bottom: 2px; left: 3px; font-size: 7px; opacity: 0.5; }
+.k .hint-br { position: absolute; bottom: 2px; right: 3px; font-size: 7px; opacity: 0.5; }
+.k .label-top { position: absolute; top: 1px; left: 0; right: 0; text-align: center; font-size: 6.5px; opacity: 0.45; }
+
+/* Bottom row special keys */
+.k-shift { flex: 1.3; font-size: 12px; }
+.k-star { flex: 1; font-size: 13px; }
+.k-er { flex: 1; font-size: 14px; }
+.k-space { flex: 2.2; font-size: 9px; letter-spacing: 0.5px; }
+.k-punc { flex: 1; font-size: 11px; }
+.k-bs { flex: 1.3; font-size: 15px; }
+.k-enter { flex: 1.8; font-size: 11px; }
+
+/* Upload & Download */
+.action-section { background: #16213e; border-radius: 12px; padding: 14px; margin-bottom: 14px; }
+.action-section h2 { font-size: 0.95em; margin-bottom: 10px; color: #aaa; }
+.upload-area { border: 2px dashed #444; border-radius: 8px; padding: 20px; text-align: center; cursor: pointer; transition: border-color 0.2s; margin-bottom: 10px; }
+.upload-area:hover, .upload-area.drag-over { border-color: #f57d51; }
+.upload-area p { color: #888; font-size: 0.85em; }
+.upload-area .filename { color: #f57d51; font-weight: bold; margin-top: 6px; }
+.upload-area input { display: none; }
+.btn { width: 100%; padding: 13px; border: none; border-radius: 8px; font-size: 0.95em; cursor: pointer; font-weight: bold; transition: opacity 0.2s; }
+.btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.btn-download { background: #f57d51; color: #fff; }
+.btn-download:hover:not(:disabled) { opacity: 0.85; }
+.status { text-align: center; margin-top: 8px; font-size: 0.8em; color: #888; }
+.status.success { color: #4caf50; }
+.status.error { color: #f44; }
+
+/* Steps */
+.steps { background: #0f3460; border-radius: 8px; padding: 10px 14px; margin-bottom: 14px; }
+.steps ol { padding-left: 18px; }
+.steps li { margin-bottom: 4px; font-size: 0.8em; color: #bbb; line-height: 1.5; }
+.steps li strong { color: #f57d51; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>洋蔥注音 配色工具</h1>
+  <p class="subtitle">選 5 個顏色，下載自定義配色的 trime.yaml</p>
+
+  <div class="steps">
+    <ol>
+      <li>下方選擇 <strong>5 個顏色</strong>，即時預覽鍵盤效果</li>
+      <li><strong>上傳</strong>你的 trime.yaml 檔案</li>
+      <li>按<strong>下載</strong>，取得已加入自定義配色的檔案</li>
+      <li>放回手機 <strong>/sdcard/rime/</strong>，Trime 選「自定義配色」→ 部署</li>
+    </ol>
+  </div>
+
+  <!-- Color Pickers -->
+  <div class="color-section">
+    <h2>五色調色盤</h2>
+    <div class="preset-row">
+      <button class="btn-preset" onclick="applyPreset('default')">原標準配色</button>
+      <button class="btn-preset" onclick="applyPreset('dark')">深色</button>
+      <button class="btn-preset" onclick="applyPreset('ocean')">海洋藍</button>
+      <button class="btn-preset" onclick="applyPreset('sakura')">櫻花粉</button>
+      <button class="btn-preset" onclick="applyPreset('forest')">森林綠</button>
+      <button class="btn-preset" onclick="applyPreset('mocha')">摩卡棕</button>
+    </div>
+    <div class="color-row">
+      <div class="color-input-wrap" id="wrap-text"><input type="color" id="c-text" value="#000000"></div>
+      <div class="color-label">文字色<br><span class="color-desc">按鍵文字、候選文字</span></div>
+      <span class="hex-display" id="hex-text">#000000</span>
+    </div>
+    <div class="color-row">
+      <div class="color-input-wrap" id="wrap-keybg"><input type="color" id="c-keybg" value="#ffffff"></div>
+      <div class="color-label">按鍵背景<br><span class="color-desc">一般按鍵、空格鍵</span></div>
+      <span class="hex-display" id="hex-keybg">#ffffff</span>
+    </div>
+    <div class="color-row">
+      <div class="color-input-wrap" id="wrap-boardbg"><input type="color" id="c-boardbg" value="#d9d9d9"></div>
+      <div class="color-label">鍵盤底色<br><span class="color-desc">鍵盤整體背景</span></div>
+      <span class="hex-display" id="hex-boardbg">#d9d9d9</span>
+    </div>
+    <div class="color-row">
+      <div class="color-input-wrap" id="wrap-funcbg"><input type="color" id="c-funcbg" value="#b3b3b3"></div>
+      <div class="color-label">功能鍵色<br><span class="color-desc">Shift、退格、符號切換</span></div>
+      <span class="hex-display" id="hex-funcbg">#b3b3b3</span>
+    </div>
+    <div class="color-row">
+      <div class="color-input-wrap" id="wrap-accent"><input type="color" id="c-accent" value="#f57d51"></div>
+      <div class="color-label">強調色<br><span class="color-desc">回車鍵、高亮候選、標籤</span></div>
+      <span class="hex-display" id="hex-accent">#f57d51</span>
+    </div>
+  </div>
+
+  <!-- Keyboard Preview -->
+  <div class="preview-section">
+    <h2>鍵盤預覽</h2>
+    <div class="keyboard-wrap" id="kb-preview">
+      <!-- Candidate bar -->
+      <div class="candidate-bar" id="kb-candidate">
+        <span class="comment" id="kb-comment">ㄓㄨˋ</span>
+        <span class="highlight" id="kb-hilited">注</span>
+        <span class="normal" id="kb-cand1">駐</span>
+        <span class="normal" id="kb-cand2">柱</span>
+        <span class="normal" id="kb-cand3">住</span>
+        <span class="normal" id="kb-cand4">祝</span>
+      </div>
+      <!-- Category bar -->
+      <div class="category-bar" id="kb-catbar">
+        <span class="cat-item">中</span>
+        <span class="cat-item">😂</span>
+        <span class="cat-item cat-active" id="kb-cat-active">原</span>
+        <span class="cat-item">日</span>
+        <span class="cat-item">韓</span>
+      </div>
+      <!-- Key rows -->
+      <div class="kb-body" id="kb-body">
+        <!-- Row 1: ㄅㄉˇˋㄓˊ˙ㄚㄞㄢ -->
+        <div class="kr" id="row1">
+          <div class="k kn"><span class="hint-tl">!</span><span class="main">ㄅ</span><span class="hint-br">1</span></div>
+          <div class="k kn"><span class="hint-tl">@</span><span class="main">ㄉ</span><span class="hint-br">2</span></div>
+          <div class="k kn ktone"><span class="hint-tl">#</span><span class="main">ˇ</span><span class="hint-br">集3</span></div>
+          <div class="k kn ktone"><span class="hint-tl">$</span><span class="main">ˋ</span><span class="hint-br">拉4</span></div>
+          <div class="k kn"><span class="hint-tl">%</span><span class="main">ㄓ</span><span class="hint-br">5</span></div>
+          <div class="k kn ktone"><span class="hint-tl">^</span><span class="main">ˊ</span><span class="hint-br">日6</span></div>
+          <div class="k kn ktone"><span class="hint-tl">&amp;</span><span class="main">˙</span><span class="hint-br">韓7</span></div>
+          <div class="k kn"><span class="hint-tl">*</span><span class="main">ㄚ</span><span class="hint-br">8</span></div>
+          <div class="k kn"><span class="hint-tl">=</span><span class="main">ㄞ</span><span class="hint-br">9</span></div>
+          <div class="k kn"><span class="hint-tl">+</span><span class="main">ㄢ</span><span class="hint-br">0</span></div>
+        </div>
+        <!-- Row 2: ㄆㄊㄍㄐㄔㄗㄧㄛㄟㄣ -->
+        <div class="kr" id="row2">
+          <div class="k kn"><span class="main">ㄆ</span><span class="hint-bl">Q</span></div>
+          <div class="k kn"><span class="main">ㄊ</span><span class="hint-bl">W</span></div>
+          <div class="k kn"><span class="hint-tl">[</span><span class="main">ㄍ</span><span class="hint-bl">E</span></div>
+          <div class="k kn"><span class="hint-tl">]</span><span class="main">ㄐ</span><span class="hint-bl">R</span></div>
+          <div class="k kn"><span class="hint-tl">{</span><span class="main">ㄔ</span><span class="hint-bl">T</span></div>
+          <div class="k kn"><span class="hint-tl">}</span><span class="main">ㄗ</span><span class="hint-bl">Y</span></div>
+          <div class="k kn"><span class="hint-tl">(</span><span class="main">ㄧ</span><span class="hint-bl">U</span></div>
+          <div class="k kn"><span class="hint-tl">)</span><span class="main">ㄛ</span><span class="hint-bl">I</span></div>
+          <div class="k kn"><span class="hint-tl">\</span><span class="main">ㄟ</span><span class="hint-bl">O</span></div>
+          <div class="k kn"><span class="hint-tl">|</span><span class="main">ㄣ</span><span class="hint-bl">P</span></div>
+        </div>
+        <!-- Row 3: ㄇㄋㄎㄑㄕㄘㄨㄜㄠㄤ -->
+        <div class="kr" id="row3">
+          <div class="k kn"><span class="label-top">刪詞</span><span class="main">ㄇ</span><span class="hint-bl">A</span></div>
+          <div class="k kn"><span class="label-top">剪下</span><span class="main">ㄋ</span><span class="hint-bl">S</span></div>
+          <div class="k kn"><span class="label-top">複製</span><span class="main">ㄎ</span><span class="hint-bl">D</span></div>
+          <div class="k kn"><span class="label-top">貼上</span><span class="main">ㄑ</span><span class="hint-bl">F</span></div>
+          <div class="k kn"><span class="hint-tl">「」</span><span class="main">ㄕ</span><span class="hint-bl">G</span></div>
+          <div class="k kn"><span class="main">ㄘ</span><span class="hint-bl">H</span></div>
+          <div class="k kn"><span class="main">ㄨ</span><span class="hint-bl">J</span></div>
+          <div class="k kn"><span class="main">ㄜ</span><span class="hint-bl">K</span></div>
+          <div class="k kn"><span class="main">ㄠ</span><span class="hint-bl">L</span></div>
+          <div class="k kn"><span class="main" style="font-size:12px">ㄤ</span><span class="hint-br">;</span></div>
+        </div>
+        <!-- Row 4: ㄈㄌㄏㄒㄖㄙㄩㄝㄡㄥ -->
+        <div class="kr" id="row4">
+          <div class="k kn"><span class="label-top">時間</span><span class="main">ㄈ</span><span class="hint-bl">Z</span></div>
+          <div class="k kn"><span class="label-top">日期</span><span class="main">ㄌ</span><span class="hint-bl">X</span></div>
+          <div class="k kn"><span class="label-top">全選</span><span class="main">ㄏ</span><span class="hint-bl">C</span></div>
+          <div class="k kn"><span class="main">ㄒ</span><span class="hint-bl">V</span></div>
+          <div class="k kn"><span class="main">ㄖ</span><span class="hint-bl">B</span></div>
+          <div class="k kn"><span class="main">ㄙ</span><span class="hint-bl">N</span></div>
+          <div class="k kn"><span class="main">ㄩ</span><span class="hint-bl">M</span></div>
+          <div class="k kn"><span class="main">ㄝ</span><span class="hint-br">,</span></div>
+          <div class="k kn"><span class="main">ㄡ</span><span class="hint-br">.</span></div>
+          <div class="k kn"><span class="main">ㄥ</span><span class="hint-br">/</span></div>
+        </div>
+        <!-- Row 5: Shift ✳ ㄦ [spacebar] <，> ⌫ 語音 -->
+        <div class="kr" id="row5">
+          <div class="k k-shift kf" id="k-shift"><span class="main">Shift</span></div>
+          <div class="k k-star kf" id="k-star"><span class="main">✳</span></div>
+          <div class="k k-er kn" id="k-er"><span class="main">ㄦ</span><span class="hint-bl">-</span></div>
+          <div class="k k-space" id="k-space"><span class="main">《洋蔥手機注音plus》</span></div>
+          <div class="k k-punc kf" id="k-punc"><span class="main">，</span></div>
+          <div class="k k-bs" id="k-bs"><span class="main">⌫</span></div>
+          <div class="k k-enter" id="k-enter"><span class="main">語音</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Upload & Download -->
+  <div class="action-section">
+    <h2>下載配色</h2>
+    <div class="upload-area" id="upload-area">
+      <p>📂 點擊或拖曳你的 <strong>trime.yaml</strong> 到這裡</p>
+      <div class="filename" id="upload-filename"></div>
+      <input type="file" id="file-input" accept=".yaml,.yml">
+    </div>
+    <button class="btn btn-download" id="btn-download" disabled onclick="downloadFile()">
+      下載自定義配色的 trime.yaml
+    </button>
+    <div class="status" id="status"></div>
+  </div>
+</div>
+
+<script>
+// ===== State =====
+const ids = ['text', 'keybg', 'boardbg', 'funcbg', 'accent'];
+let uploadedContent = null;
+
+// ===== Presets =====
+const presets = {
+  default: { text:'#000000', keybg:'#ffffff', boardbg:'#d9d9d9', funcbg:'#b3b3b3', accent:'#f57d51' },
+  dark:    { text:'#e0e0e0', keybg:'#2c2c2c', boardbg:'#1a1a1a', funcbg:'#3a3a3a', accent:'#ff6b35' },
+  ocean:   { text:'#1a3a4a', keybg:'#e8f4f8', boardbg:'#b8d8e8', funcbg:'#8ab8cc', accent:'#0077b6' },
+  sakura:  { text:'#4a2040', keybg:'#fff0f5', boardbg:'#f5d5e0', funcbg:'#e0a8c0', accent:'#e84393' },
+  forest:  { text:'#1a3020', keybg:'#eaf5e8', boardbg:'#c8dcc5', funcbg:'#98b896', accent:'#2d8a4e' },
+  mocha:   { text:'#3e2723', keybg:'#f5f0eb', boardbg:'#d7ccc8', funcbg:'#bcaaa4', accent:'#8d6e63' },
+};
+
+function applyPreset(name) {
+  const p = presets[name];
+  ids.forEach(id => { document.getElementById('c-'+id).value = p[id]; });
+  updateAll();
+}
+
+// ===== Color Helpers =====
+function hexToRgb(h) { h=h.replace('#',''); return [parseInt(h.substr(0,2),16),parseInt(h.substr(2,2),16),parseInt(h.substr(4,2),16)]; }
+function rgbToHex(r,g,b) { return '#'+[r,g,b].map(x=>Math.max(0,Math.min(255,Math.round(x))).toString(16).padStart(2,'0')).join(''); }
+function mix(c1,c2,w) { const a=hexToRgb(c1),b=hexToRgb(c2); return rgbToHex(a[0]*(1-w)+b[0]*w,a[1]*(1-w)+b[1]*w,a[2]*(1-w)+b[2]*w); }
+function darken(h,a) { return mix(h,'#000000',a); }
+function lighten(h,a) { return mix(h,'#ffffff',a); }
+function hexToTrime(h) { return '0xff'+h.replace('#',''); }
+
+function getColors() { return Object.fromEntries(ids.map(id=>[id,document.getElementById('c-'+id).value])); }
+
+// ===== Derive full color scheme from 5 colors =====
+function deriveScheme(c) {
+  const candidateBg = mix(c.keybg, c.boardbg, 0.3);
+  const commentColor = mix(c.text, c.boardbg, 0.55);
+  const symbolColor = mix(c.text, c.boardbg, 0.5);
+  const darkFunc = darken(c.funcbg, 0.2);
+  const midFunc = darken(c.funcbg, 0.1);
+  const warmFunc = mix(c.funcbg, darken(c.accent, 0.3), 0.15);
+  const deepDark = darken(mix(c.text, c.boardbg, 0.15), 0.05);
+  const tintAccent1 = mix(c.accent, c.keybg, 0.7);
+  const tintAccent2 = mix(c.accent, c.keybg, 0.75);
+
+  return {
+    // Candidate area
+    back_color: candidateBg, border_color: c.funcbg,
+    candidate_separator_color: candidateBg, candidate_text_color: c.text,
+    comment_text_color: commentColor,
+    hilited_back_color: candidateBg,
+    hilited_candidate_back_color: c.accent, hilited_candidate_text_color: c.keybg,
+    hilited_comment_text_color: c.text,
+    // Keys
+    hilited_key_back_color: darkFunc, hilited_key_symbol_color: c.keybg,
+    hilited_key_text_color: c.keybg,
+    hilited_off_key_back_color: c.accent, hilited_off_key_text_color: c.keybg,
+    hilited_text_color: c.text,
+    key_back_color: c.keybg, key_symbol_color: symbolColor, key_text_color: c.text,
+    keyboard_back_color: c.boardbg, label_color: c.accent,
+    off_key_back_color: c.funcbg, off_key_text_color: c.keybg,
+    preview_back_color: darkFunc, preview_text_color: c.keybg,
+    text_color: commentColor, text_back_color: candidateBg,
+    on_key_back_color: c.accent, on_key_text_color: c.keybg,
+    // Special keys
+    bkg: c.keybg, tkg: c.text,
+    benter: c.accent, tenter: c.keybg,
+    bgn: c.funcbg, bgn2: warmFunc, bgn3: c.funcbg, tgn: c.keybg,
+    bbs: midFunc, tbs: c.keybg,
+    bmk: c.accent, tajs: deepDark, tajs2: c.boardbg, bjt: warmFunc,
+    bsz1: darken(c.funcbg, 0.05), bsz2: c.funcbg,
+    bzymixin: tintAccent1, bzymix: tintAccent2, bzyplus: tintAccent1,
+    grey1: symbolColor, blue1: lighten(c.keybg, 0.02), blued: c.accent,
+  };
+}
+
+// ===== Update Preview =====
+function updatePreview() {
+  const c = getColors();
+  const s = deriveScheme(c);
+
+  // Candidate bar
+  document.getElementById('kb-candidate').style.background = s.back_color;
+  document.getElementById('kb-comment').style.color = s.comment_text_color;
+  document.getElementById('kb-hilited').style.background = s.hilited_candidate_back_color;
+  document.getElementById('kb-hilited').style.color = s.hilited_candidate_text_color;
+  document.querySelectorAll('#kb-candidate .normal').forEach(el => { el.style.color = s.candidate_text_color; });
+
+  // Category bar
+  const catBar = document.getElementById('kb-catbar');
+  catBar.style.background = s.back_color;
+  catBar.querySelectorAll('.cat-item').forEach(el => { el.style.color = s.candidate_text_color; });
+  const catActive = document.getElementById('kb-cat-active');
+  catActive.style.color = s.label_color;
+  catActive.style.borderColor = s.label_color;
+
+  // Keyboard body
+  document.getElementById('kb-body').style.background = s.keyboard_back_color;
+
+  // Normal keys
+  document.querySelectorAll('.kn').forEach(k => {
+    k.style.background = s.key_back_color;
+    k.style.color = s.key_text_color;
+  });
+  // Tone keys (ˇˋˊ˙) — bzyplus color
+  document.querySelectorAll('.ktone').forEach(k => {
+    k.style.background = s.bzyplus;
+  });
+  // Hint text on normal keys
+  document.querySelectorAll('.kn .hint-tl, .kn .hint-tr, .kn .hint-bl, .kn .hint-br, .kn .label-top').forEach(el => {
+    el.style.color = s.key_symbol_color;
+  });
+
+  // Function keys
+  document.querySelectorAll('.kf').forEach(k => {
+    k.style.background = s.bgn;
+    k.style.color = s.tgn;
+  });
+
+  // Space
+  const sp = document.getElementById('k-space');
+  sp.style.background = s.bkg;
+  sp.style.color = s.tkg;
+
+  // Backspace
+  const bs = document.getElementById('k-bs');
+  bs.style.background = s.bbs;
+  bs.style.color = s.tbs;
+
+  // Enter
+  const en = document.getElementById('k-enter');
+  en.style.background = s.benter;
+  en.style.color = s.tenter;
+}
+
+function updateHexDisplays() {
+  ids.forEach(id => {
+    const val = document.getElementById('c-'+id).value;
+    document.getElementById('hex-'+id).textContent = val;
+    document.getElementById('wrap-'+id).style.borderColor = val;
+  });
+}
+
+function updateAll() { updateHexDisplays(); updatePreview(); }
+
+ids.forEach(id => { document.getElementById('c-'+id).addEventListener('input', updateAll); });
+
+// ===== File Upload =====
+const uploadArea = document.getElementById('upload-area');
+const fileInput = document.getElementById('file-input');
+uploadArea.addEventListener('click', () => fileInput.click());
+uploadArea.addEventListener('dragover', e => { e.preventDefault(); uploadArea.classList.add('drag-over'); });
+uploadArea.addEventListener('dragleave', () => uploadArea.classList.remove('drag-over'));
+uploadArea.addEventListener('drop', e => {
+  e.preventDefault(); uploadArea.classList.remove('drag-over');
+  if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
+});
+fileInput.addEventListener('change', () => { if (fileInput.files.length) handleFile(fileInput.files[0]); });
+
+function handleFile(file) {
+  const reader = new FileReader();
+  reader.onload = e => {
+    uploadedContent = e.target.result;
+    document.getElementById('upload-filename').textContent = '\u2705 ' + file.name;
+    document.getElementById('btn-download').disabled = false;
+    setStatus('檔案已載入，可以下載了！', 'success');
+  };
+  reader.onerror = () => setStatus('讀取失敗，請重試', 'error');
+  reader.readAsText(file, 'utf-8');
+}
+
+function setStatus(msg, type) {
+  const el = document.getElementById('status');
+  el.textContent = msg; el.className = 'status ' + (type||'');
+}
+
+// ===== Generate YAML =====
+function generateSchemeYaml() {
+  const c = getColors();
+  const s = deriveScheme(c);
+  const lines = ['  custom_user:', '    name: "自定義配色"', '    author: "洋蔥注音配色工具"'];
+  const props = [
+    'back_color','border_color','candidate_separator_color','candidate_text_color',
+    'comment_text_color','hilited_back_color','hilited_candidate_back_color',
+    'hilited_candidate_text_color','hilited_comment_text_color','hilited_key_back_color',
+    'hilited_key_symbol_color','hilited_key_text_color','hilited_off_key_back_color',
+    'hilited_off_key_text_color','hilited_text_color','key_back_color','key_symbol_color',
+    'key_text_color','keyboard_back_color','label_color','off_key_back_color',
+    'off_key_text_color','preview_back_color','preview_text_color','text_color',
+    'text_back_color','on_key_back_color','on_key_text_color',
+    'bkg','tkg','benter','tenter','bgn','bgn2','bgn3','tgn',
+    'bbs','tbs','bmk','tajs','tajs2','bjt',
+    'bsz1','bsz2','bzymixin','bzymix','bzyplus',
+    'grey1','blue1','blued',
+  ];
+  props.forEach(p => { lines.push('    '+p+': '+hexToTrime(s[p])); });
+  return lines.join('\n');
+}
+
+// ===== Download =====
+function downloadFile() {
+  if (!uploadedContent) return;
+  let content = uploadedContent;
+  const schemeBlock = '\n' + generateSchemeYaml() + '\n';
+
+  // Remove existing custom_user block if present
+  content = content.replace(/\n {2}custom_user:\n(?:(?! {2}\w).)*\n/gs, '\n');
+
+  // Insert before liquid_keyboard:
+  const marker = '\nliquid_keyboard:';
+  const idx = content.indexOf(marker);
+  if (idx === -1) { setStatus('找不到 liquid_keyboard 段落，檔案格式可能不正確', 'error'); return; }
+  content = content.slice(0, idx) + schemeBlock + content.slice(idx);
+
+  // Update color_scheme
+  content = content.replace(/color_scheme:\s*\S+/, 'color_scheme: custom_user');
+
+  // Download
+  const blob = new Blob([content], { type: 'text/yaml; charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  const origName = document.getElementById('upload-filename').textContent.replace('\u2705 ', '');
+  a.download = origName || 'trime.yaml';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  setStatus('下載成功！放入 /sdcard/rime/ 後在 Trime 部署即可', 'success');
+}
+
+// Init
+updateAll();
+</script>
+</body>
+</html>

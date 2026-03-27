@@ -88,6 +88,7 @@ GroqVoice 需要 Groq API Key 才能使用語音轉文字功能。
    - 推薦選擇：
      - **原標準配色！** — 有注音標示及詳細標點符號
      - **標準配色！** — 有注音標示，簡潔風格
+   - 想自訂顏色？使用 [**配色工具**](https://eric09230.github.io/trime-groqvoice-installer/color-picker.html) 選 5 個顏色即可產生專屬配色
 6. **重新部署**：
    - 點擊右上角的 **重新部署圖案**（↻），等待部署完成
 
@@ -316,6 +317,8 @@ GroqVoice 需要 Groq API Key 才能使用語音轉文字功能。
 | …及更多 | | | |
 
 每套方案均定義完整配色：背景、邊框、候選文字、高亮，以及鍵盤按鍵的 4 色分區（一般鍵、聲調鍵、功能鍵/退格、Enter），確保所有配色方案都能正確顯示鍵盤顏色。
+
+想打造自己的配色？使用線上 [**配色工具**](https://eric09230.github.io/trime-groqvoice-installer/color-picker.html)，選 5 個顏色即時預覽鍵盤效果，一鍵下載修改好的 trime.yaml。
 
 ---
 
