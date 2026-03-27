@@ -69,11 +69,6 @@ h1 { text-align: center; margin-bottom: 4px; font-size: 1.4em; }
 /* Upload & Download */
 .action-section { background: #16213e; border-radius: 12px; padding: 14px; margin-bottom: 14px; }
 .action-section h2 { font-size: 0.95em; margin-bottom: 10px; color: #aaa; }
-.upload-area { border: 2px dashed #444; border-radius: 8px; padding: 20px; text-align: center; cursor: pointer; transition: border-color 0.2s; margin-bottom: 10px; }
-.upload-area:hover, .upload-area.drag-over { border-color: #f57d51; }
-.upload-area p { color: #888; font-size: 0.85em; }
-.upload-area .filename { color: #f57d51; font-weight: bold; margin-top: 6px; }
-.upload-area input { display: none; }
 .btn { width: 100%; padding: 13px; border: none; border-radius: 8px; font-size: 0.95em; cursor: pointer; font-weight: bold; transition: opacity 0.2s; }
 .btn:disabled { opacity: 0.4; cursor: not-allowed; }
 .btn-download { background: #f57d51; color: #fff; }
@@ -97,8 +92,7 @@ h1 { text-align: center; margin-bottom: 4px; font-size: 1.4em; }
   <div class="steps">
     <ol>
       <li>下方選擇 <strong>5 個顏色</strong>，即時預覽鍵盤效果</li>
-      <li><strong>上傳</strong>你的 trime.yaml 檔案</li>
-      <li>按<strong>下載</strong>，取得已加入自定義配色的檔案</li>
+      <li>按<strong>下載</strong>，自動產生配色好的 trime.yaml</li>
       <li>放回手機 <strong>/sdcard/rime/</strong>，Trime 選「自定義配色」→ 部署</li>
     </ol>
   </div>
@@ -230,15 +224,10 @@ h1 { text-align: center; margin-bottom: 4px; font-size: 1.4em; }
     </div>
   </div>
 
-  <!-- Upload & Download -->
+  <!-- Download -->
   <div class="action-section">
     <h2>下載配色</h2>
-    <div class="upload-area" id="upload-area">
-      <p>📂 點擊或拖曳你的 <strong>trime.yaml</strong> 到這裡</p>
-      <div class="filename" id="upload-filename"></div>
-      <input type="file" id="file-input" accept=".yaml,.yml">
-    </div>
-    <button class="btn btn-download" id="btn-download" disabled onclick="downloadFile()">
+    <button class="btn btn-download" id="btn-download" onclick="downloadFile()">
       下載自定義配色的 trime.yaml
     </button>
     <div class="status" id="status"></div>
@@ -390,29 +379,24 @@ function updateAll() { updateHexDisplays(); updatePreview(); }
 
 ids.forEach(id => { document.getElementById('c-'+id).addEventListener('input', updateAll); });
 
-// ===== File Upload =====
-const uploadArea = document.getElementById('upload-area');
-const fileInput = document.getElementById('file-input');
-uploadArea.addEventListener('click', () => fileInput.click());
-uploadArea.addEventListener('dragover', e => { e.preventDefault(); uploadArea.classList.add('drag-over'); });
-uploadArea.addEventListener('dragleave', () => uploadArea.classList.remove('drag-over'));
-uploadArea.addEventListener('drop', e => {
-  e.preventDefault(); uploadArea.classList.remove('drag-over');
-  if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
-});
-fileInput.addEventListener('change', () => { if (fileInput.files.length) handleFile(fileInput.files[0]); });
+// ===== Auto-fetch trime.yaml from GitHub =====
+const YAML_URL = 'https://raw.githubusercontent.com/eric09230/trime-groqvoice-installer/master/rime/%E6%B4%8B%E8%94%A5%E6%B3%A8%E9%9F%B3331k_M.trime.yaml';
 
-function handleFile(file) {
-  const reader = new FileReader();
-  reader.onload = e => {
-    uploadedContent = e.target.result;
-    document.getElementById('upload-filename').textContent = '\u2705 ' + file.name;
-    document.getElementById('btn-download').disabled = false;
-    setStatus('檔案已載入，可以下載了！', 'success');
-  };
-  reader.onerror = () => setStatus('讀取失敗，請重試', 'error');
-  reader.readAsText(file, 'utf-8');
+async function fetchBaseFile() {
+  if (uploadedContent) return;
+  try {
+    setStatus('正在載入底本檔案...', '');
+    const resp = await fetch(YAML_URL);
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    uploadedContent = await resp.text();
+    setStatus('底本已就緒', 'success');
+  } catch(e) {
+    setStatus('自動載入失敗，請稍後重試', 'error');
+  }
 }
+
+// Page load 時自動抓
+fetchBaseFile();
 
 function setStatus(msg, type) {
   const el = document.getElementById('status');
@@ -443,8 +427,12 @@ function generateSchemeYaml() {
 }
 
 // ===== Download =====
-function downloadFile() {
-  if (!uploadedContent) return;
+async function downloadFile() {
+  if (!uploadedContent) {
+    await fetchBaseFile();
+    if (!uploadedContent) { setStatus('檔案載入失敗，請檢查網路後重試', 'error'); return; }
+  }
+
   let content = uploadedContent;
   const schemeBlock = '\n' + generateSchemeYaml() + '\n';
 
@@ -454,7 +442,7 @@ function downloadFile() {
   // Insert before liquid_keyboard:
   const marker = '\nliquid_keyboard:';
   const idx = content.indexOf(marker);
-  if (idx === -1) { setStatus('找不到 liquid_keyboard 段落，檔案格式可能不正確', 'error'); return; }
+  if (idx === -1) { setStatus('檔案格式不正確，請聯繫開發者', 'error'); return; }
   content = content.slice(0, idx) + schemeBlock + content.slice(idx);
 
   // Update color_scheme
@@ -465,11 +453,10 @@ function downloadFile() {
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;
-  const origName = document.getElementById('upload-filename').textContent.replace('\u2705 ', '');
-  a.download = origName || 'trime.yaml';
+  a.download = '洋蔥注音331k_M.trime.yaml';
   document.body.appendChild(a); a.click(); document.body.removeChild(a);
   URL.revokeObjectURL(url);
-  setStatus('下載成功！放入 /sdcard/rime/ 後在 Trime 部署即可', 'success');
+  setStatus('下載成功！放入 /sdcard/rime/ 覆蓋原檔，在 Trime 部署即可', 'success');
 }
 
 // Init
