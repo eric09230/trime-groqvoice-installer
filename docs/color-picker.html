@@ -226,9 +226,15 @@ h1 { text-align: center; margin-bottom: 4px; font-size: 1.4em; }
     </div>
   </div>
 
-  <!-- Download -->
+  <!-- Upload & Download -->
   <div class="action-section">
-    <h2>下載配色</h2>
+    <h2>底本來源</h2>
+    <p style="font-size:0.8em;color:#888;margin-bottom:10px;">預設使用 GitHub 上的標準版。如有自行修改過的 trime.yaml，可上傳作為底本：</p>
+    <label class="btn" style="background:#2a4a7f;color:#fff;display:block;text-align:center;margin-bottom:8px;cursor:pointer;">
+      📂 上傳自己的 trime.yaml
+      <input type="file" id="file-upload" accept=".yaml,.yml" style="display:none;" onchange="handleUpload(event)">
+    </label>
+    <div id="upload-status" style="font-size:0.8em;color:#4caf50;text-align:center;margin-bottom:8px;"></div>
     <button class="btn btn-download" id="btn-download" onclick="downloadFile()">
       下載自定義配色的 trime.yaml
     </button>
@@ -399,6 +405,27 @@ async function fetchBaseFile() {
 
 // Page load 時自動抓
 fetchBaseFile();
+
+// ===== Upload custom YAML =====
+function handleUpload(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    const content = e.target.result;
+    // Basic validation: check it looks like a trime.yaml
+    if (!content.includes('keyboard_back_color') && !content.includes('liquid_keyboard')) {
+      document.getElementById('upload-status').textContent = '⚠️ 此檔案不像 trime.yaml，請確認';
+      document.getElementById('upload-status').style.color = '#f44';
+      return;
+    }
+    uploadedContent = content;
+    document.getElementById('upload-status').textContent = '✅ 已載入：' + file.name + '（取代 GitHub 底本）';
+    document.getElementById('upload-status').style.color = '#4caf50';
+    setStatus('底本已更換為上傳的檔案', 'success');
+  };
+  reader.readAsText(file, 'UTF-8');
+}
 
 function setStatus(msg, type) {
   const el = document.getElementById('status');
