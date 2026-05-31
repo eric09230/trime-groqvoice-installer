@@ -6,6 +6,10 @@ echo ============================================
 echo   TRIME + GroqVoice One-Click Installer
 echo ============================================
 echo.
+echo  Installing TRIME Standard version (no glide typing).
+echo.
+set "APK_FILE=trime.apk"
+set "APK_DESC=Standard"
 
 REM Check ADB
 where adb >nul 2>&1
@@ -31,8 +35,8 @@ echo       Device connected!
 echo.
 
 REM Install TRIME
-echo [2/8] Installing TRIME (Tong Wen Input Method)...
-adb install -r "%~dp0apk\trime.apk"
+echo [2/8] Installing TRIME (%APK_DESC% version)...
+adb install -r "%~dp0apk\%APK_FILE%"
 if %errorlevel% neq 0 (
     echo [WARNING] TRIME install failed. It may already be installed.
 )
@@ -94,7 +98,7 @@ adb shell settings get secure default_input_method
 echo.
 
 echo ============================================
-echo   Installation Complete!
+echo   Installation Complete! (%APK_DESC% version)
 echo ============================================
 echo.
 echo Next steps:
