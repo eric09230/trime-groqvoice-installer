@@ -6,30 +6,10 @@ echo ============================================
 echo   TRIME + GroqVoice One-Click Installer
 echo ============================================
 echo.
-echo  Please select TRIME version:
+echo  Installing TRIME Standard version (no glide typing).
 echo.
-echo    [1] Standard  - Basic input (no glide typing)
-echo    [2] Glide     - With glide typing (Bopomofo + English fuzzy correction)
-echo.
-set /p CHOICE="  Enter your choice (1 or 2): "
-
-if "%CHOICE%"=="1" (
-    set "APK_FILE=trime.apk"
-    set "APK_DESC=Standard"
-    set "INSTALL_GLIDE=0"
-) else if "%CHOICE%"=="2" (
-    set "APK_FILE=com.osfans.trime-v3.3.9-27-g04cc8fc8-arm64-v8a-release.apk"
-    set "APK_DESC=Glide"
-    set "INSTALL_GLIDE=1"
-) else (
-    echo [ERROR] Invalid choice. Please enter 1 or 2.
-    pause
-    exit /b 1
-)
-
-echo.
-echo  Selected: %APK_DESC% version
-echo.
+set "APK_FILE=trime.apk"
+set "APK_DESC=Standard"
 
 REM Check ADB
 where adb >nul 2>&1
@@ -126,13 +106,6 @@ echo   1. Open GroqVoice app to set your Groq API key
 echo      (Get free API key at https://console.groq.com)
 echo   2. Long-press Enter in TRIME to use voice input
 echo.
-if "%INSTALL_GLIDE%"=="1" (
-echo Glide typing tips:
-echo   - Press the Chinese/English toggle button for English mode
-echo   - Swipe across letters to type words with fuzzy correction
-echo   - Tap individual keys for direct character input (passwords, etc.)
-echo.
-)
 echo Optional: In GroqVoice settings you can configure:
 echo   - LLM text refinement (requires Groq/OpenAI/OpenRouter key)
 echo   - Auto send (press Enter after voice input)
