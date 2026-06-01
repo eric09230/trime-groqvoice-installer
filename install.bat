@@ -2,6 +2,9 @@
 chcp 65001 >nul 2>&1
 title TRIME + GroqVoice Installer
 
+REM Prefer bundled adb (platform-tools shipped alongside this script); fall back to system adb
+if exist "%~dp0platform-tools\adb.exe" set "PATH=%~dp0platform-tools;%PATH%"
+
 echo ============================================
 echo   TRIME + GroqVoice One-Click Installer
 echo ============================================
@@ -38,7 +41,12 @@ REM Install TRIME
 echo [2/8] Installing TRIME (%APK_DESC% version)...
 adb install -r "%~dp0apk\%APK_FILE%"
 if %errorlevel% neq 0 (
-    echo [WARNING] TRIME install failed. It may already be installed.
+    echo [INFO] Direct install failed - likely a signature mismatch from a self-built APK.
+    echo        Uninstalling old TRIME and reinstalling. App theme/scheme selection resets;
+    echo        rime data in storage is kept.
+    adb uninstall com.osfans.trime
+    adb install "%~dp0apk\%APK_FILE%"
+    if errorlevel 1 echo [ERROR] TRIME install still failed. Check device connection/cable.
 )
 echo.
 
