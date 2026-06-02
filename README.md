@@ -20,9 +20,13 @@
 
 ## 安裝前準備
 
-### 第一步：電腦安裝 ADB
+> 💡 **本安裝包已內建 ADB**（`platform-tools/` 資料夾）。Windows 下 `install.bat` 會自動使用夾內的 adb，**不需另外下載、也不用設定環境變數**——可直接跳到「[開始安裝](#開始安裝)」，只要做好下面的「第二步：手機開啟 USB 偵錯」即可。
+>
+> 下面的「第一步」只有在你的包**沒有** `platform-tools/` 資料夾，或使用 **macOS / Linux** 時才需要。
 
-ADB（Android Debug Bridge）是電腦與手機之間的橋梁工具，需要手動下載。
+### 第一步：電腦安裝 ADB（內含 platform-tools 時可略過）
+
+ADB（Android Debug Bridge）是電腦與手機之間的橋梁工具。**若安裝包已附 `platform-tools/` 資料夾，本步驟可直接跳過。** 否則需手動下載：
 
 1. 前往下載頁面：https://developer.android.com/studio/releases/platform-tools
 2. 根據你的系統下載：
@@ -56,6 +60,8 @@ GroqVoice 需要 Groq API Key 才能使用語音轉文字功能。
 5. 複製 API Key（以 `gsk_` 開頭），安裝完成後會用到
 
 ## 開始安裝
+
+> Windows 雙擊 `install.bat` 即一鍵完成。它會自動：① 使用夾內 `platform-tools\adb.exe`（沒有才退回系統 adb）② 安裝 APK——**若手機已裝過舊版且簽章不同，會自動卸載再重裝**（自編譯 APK 每次簽章不同，這是正常的；App 內主題會重置、需重選，但 rime 資料保留）③ 推送 rime 設定 ④ 啟用並設為預設輸入法。
 
 1. 用 USB 傳輸線將手機連接到電腦
 2. 手機會跳出「允許 USB 偵錯嗎？」→ 點擊「允許」（建議勾選「一律允許」）
@@ -363,13 +369,17 @@ GroqVoice 需要 Groq API Key 才能使用語音轉文字功能。
 
 ```
 trime-installer/
-├── install.bat          ← Windows 安裝腳本
+├── install.bat          ← Windows 一鍵安裝腳本（自動用夾內 adb）
 ├── install.sh           ← macOS/Linux 安裝腳本
+├── install-wireless.sh  ← Termux 無線 adb 安裝
+├── install-shizuku.sh   ← Shizuku 安裝
 ├── README.md            ← 本說明文件
+├── 手機安裝說明.md       ← 免電腦・純手動安裝教學
+├── platform-tools/      ← 內建 ADB（adb.exe + DLL），Windows 免另裝
 ├── apk/
-│   ├── trime.apk        ← TRIME 同文輸入法
+│   ├── trime.apk        ← TRIME 同文輸入法（自訂 fork）
 │   └── groqvoice.apk    ← GroqVoice 語音輸入
-└── rime/                ← RIME 方案及詞庫
+└── rime/                ← RIME 方案、詞庫、鍵盤主題
 ```
 
 ## 自訂修改記錄
@@ -389,6 +399,7 @@ trime-installer/
 | 7 | **英文模式按 ✽ 不開英文標點頁** | `KeyboardWindow.switchKeyboard()` 判斷 target=="bqfh1" 且 isAsciiMode 時重導到 "bqfh2" |
 | 8 | **bqfh 頁面間無法切回 bqfh1** — fix #7 的重導在 bqfh 內部導航也會觸發，配合同鍵盤 guard 導致無反應 | 重導加 `!currentId.startsWith("bqfh")` 條件，僅從外部進入時重導 |
 | 9 | **SwitchesUi 按鈕無觸覺回饋** | `InputBarDelegate.kt` 的 `setOnSwitchClick` 加入 `InputFeedbackManager.keyPressVibrate()`，遵循用戶振動設定 |
+| 10 | **英文模式按 ✽ 進標點頁後按返回會跳回注音**（而非留在英文）— 返回鍵 `.last_lock` 切回 bpmfmobileplus 時，`reset_ascii_mode` 強制把 ascii_mode 重置為注音 | `KeyboardWindow.kt` 對「返回」語意（`.last_lock`、emoji 切回的空字串）傳入 `preserveAsciiMode`，跳過 reset、改用離開前存下的 `lastAsciiMode`，使「英文→標點頁→返回」保留英文；開新輸入框等其他路徑仍照常重置 |
 
 ### YAML 修改（rime/洋蔥注音331k_M.trime.yaml）
 
@@ -400,6 +411,7 @@ trime-installer/
 | 4 | **多數配色方案鍵盤顏色異常** — 鍵盤佈局引用自訂色標（`bkg`、`benter`、`bbs`、`bzyplus` 等 30+ 個），但僅「標準配色！」和「原標準配色！」有定義，其餘 36 個方案全部缺失，導致切換配色後鍵盤變成整片同色 | 1. 在 `fallback_colors` 新增 30+ 項自訂色標回退鏈作為安全網 2. 為全部 36 個配色方案逐一推導並補齊自訂按鍵色（4 色分區：一般鍵=背景色、聲調鍵=accent 淡化、功能鍵/退格=背景加深/減淡、Enter=accent 色） |
 
 | 5 | **按數字 6/7 進入日韓文模式時鍵盤無對應標示** — 按下 6（日文）或 7（韓文）後鍵盤仍顯示注音符號，使用者無法得知每個按鍵對應的假名/韓文字 | 新增 `jpnin1_kb`（日語羅馬字鍵盤）和 `hangeul_hnc`（韓語 HNC 鍵盤），按 6/7 時透過 `text:` 複合動作 `'{Keyboard_jpnin1}{text_6}'` 先切鍵盤再送數字，避免 Eisu_toggle 干擾組字；空白鍵和 Enter 上屏後自動切回注音鍵盤 |
+| 6 | **英文鍵盤 6/7 顯示成 ˊ/˙、按下還會切日韓**（應顯示並輸入數字）— 為讓英文模式 6/7 打數字而非切日韓，需在鍵上加 `ascii:` 欄位；但 TRIME `getLabel()` 規則是「鍵一旦有 ascii action 就不顯示鍵盤 inline label，改顯示 click 目標的 label」 | 讓兩個 label 各司其職：`text_6_jp`/`text_7_kr`（click 目標，注音閒置用）label 設 `ˊ`/`˙`；`text_6`/`text_7`（ascii 目標，英文用）label 設 `6`/`7`；並在 5 個注音鍵盤的 6/7 鍵加 `ascii: text_6`/`text_7`。結果：注音顯示聲調、英文顯示並輸入數字、注音閒置按 6/7 仍切日韓 |
 
 ### Schema 修改（rime/bpmfmobileplus.schema.yaml）
 
@@ -417,7 +429,10 @@ trime-installer/
 ## 常見問題
 
 **Q: 執行 install.bat 時顯示「adb not found」**
-A: ADB 沒有正確安裝或環境變數沒設定。請重新確認第一步。
+A: 本包已內建 adb（`platform-tools/`），正常不會出現。若出現，多半是解壓縮不完整導致 `platform-tools/` 遺失——請重新完整解壓；或自行依「第一步」安裝 ADB 並設定環境變數。
+
+**Q: install.bat 顯示 `INSTALL_FAILED_UPDATE_INCOMPATIBLE` / 簽章不符**
+A: 自編譯 APK 每次 build 簽章不同，無法直接覆蓋。新版 `install.bat` 會自動卸載舊版再裝（App 內主題/方案選擇會重置，需重選；rime 資料在 `/storage` 不受影響）。若用舊腳本，手動執行 `adb uninstall com.osfans.trime` 後再裝即可。
 
 **Q: 顯示「no devices found」**
 A: 手機沒有正確連接。請確認 USB 偵錯已開啟，並在手機上允許 USB 偵錯。
