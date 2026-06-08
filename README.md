@@ -412,6 +412,7 @@ trime-installer/
 
 | 5 | **按數字 6/7 進入日韓文模式時鍵盤無對應標示** — 按下 6（日文）或 7（韓文）後鍵盤仍顯示注音符號，使用者無法得知每個按鍵對應的假名/韓文字 | 新增 `jpnin1_kb`（日語羅馬字鍵盤）和 `hangeul_hnc`（韓語 HNC 鍵盤），按 6/7 時透過 `text:` 複合動作 `'{Keyboard_jpnin1}{text_6}'` 先切鍵盤再送數字，避免 Eisu_toggle 干擾組字；空白鍵和 Enter 上屏後自動切回注音鍵盤 |
 | 6 | **英文鍵盤 6/7 顯示成 ˊ/˙、按下還會切日韓**（應顯示並輸入數字）— 為讓英文模式 6/7 打數字而非切日韓，需在鍵上加 `ascii:` 欄位；但 TRIME `getLabel()` 規則是「鍵一旦有 ascii action 就不顯示鍵盤 inline label，改顯示 click 目標的 label」 | 讓兩個 label 各司其職：`text_6_jp`/`text_7_kr`（click 目標，注音閒置用）label 設 `ˊ`/`˙`；`text_6`/`text_7`（ascii 目標，英文用）label 設 `6`/`7`；並在 5 個注音鍵盤的 6/7 鍵加 `ascii: text_6`/`text_7`。結果：注音顯示聲調、英文顯示並輸入數字、注音閒置按 6/7 仍切日韓 |
+| 7 | **英文鍵盤 6/7 又變回顯示 ˊ/˙（#6 回歸）** — commit `d415227` 為了讓「注音組字」時 6/7 顯示聲調，把 `text_6`/`text_7` 的 label 從 `6`/`7` 改成 `ˊ`/`˙`；但這兩個 key 同時是英文(ascii)模式 6/7 的目標，導致英文模式跟著顯示 ˊ/˙（仍能輸入數字、只是顯示錯）。單一 `text_6` 的 label 無法同時滿足「組字顯示 ˊ」與「英文顯示 6」 | 拆鍵：新增 `text_6_num`/`text_7_num`（label `6`/`7`、send `6`/`7`）專供英文用；`text_6`/`text_7` 維持 `ˊ`/`˙` 供組字用；5 個注音鍵盤的 `ascii:` 由 `text_6`/`text_7` 改指 `text_6_num`/`text_7_num`。三態皆正確：注音閒置 ˊ/˙（切日韓）、注音組字 ˊ/˙、英文 6/7。另 `install.bat` 推送設定後加發 `am broadcast -a com.osfans.trime.action.DEPLOY`，確保更新既有安裝時會重新編譯主題 |
 
 ### Schema 修改（rime/bpmfmobileplus.schema.yaml）
 
