@@ -81,6 +81,9 @@ echo [6/8] Opening TRIME for initial deployment...
 adb shell am start -n com.osfans.trime/.MainLauncherAlias 2>nul
 echo       Waiting for TRIME to initialize...
 timeout /t 5 >nul
+REM Force a redeploy so theme/schema changes are recompiled (needed when updating an existing install;
+REM a plain app launch does NOT recompile build/ when only the theme yaml changed)
+adb shell am broadcast -a com.osfans.trime.action.DEPLOY >nul 2>&1
 echo.
 
 REM Enable IMEs (AFTER permissions and init, so system won't auto-disable)
